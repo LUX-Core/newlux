@@ -1,0 +1,5 @@
+Colors used in HEX
+
+Yellow    #dcde00
+red       #f31e2a
+Green     #31ba5f

@@ -66,12 +66,12 @@
         <translation>Adresa na koju se prima</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Ovo su Vaše Qtum adrese na koju se vrše uplate. Uvek proverite iznos i prijemnu adresu pre slanja novčića.</translation>
+        <source>These are your LUX addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Ovo su Vaše LUX adrese na koju se vrše uplate. Uvek proverite iznos i prijemnu adresu pre slanja novčića.</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
-        <translation>Ovo su vaše Qtum adrese za primanje isplete. Upotrebite dugme 'Kreiraj novu adresu prijema' na kartici za prijem da biste kreirali nove adrese.</translation>
+        <source>These are your LUX addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <translation>Ovo su vaše LUX adrese za primanje isplete. Upotrebite dugme 'Kreiraj novu adresu prijema' na kartici za prijem da biste kreirali nove adrese.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -168,7 +168,7 @@
         <translation>Potvrdite šifrovanje novčanika</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR  LUX&lt;/b&gt;!</source>
         <translation>Upozorenje: Ako šifrujete svoj novčanik, i potom izgubite svoju pristupnu frazu &lt;b&gt;IZGUBIĆETE SVE SVOJE BITKOINE&lt;/b&gt;!</translation>
     </message>
     <message>
@@ -342,8 +342,8 @@
         <translation>Ponovo obeležavam blokove na disku...</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation>Pošalji novčiće na Qtum adresu</translation>
+        <source>Send coins to a LUX address</source>
+        <translation>Pošalji novčiće na LUX adresu</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -378,12 +378,12 @@
         <translation>Enkriptuj privatne ključeve novčanika</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation>Potpišite poruke sa svojim Qtum adresama da biste dokazali njihovo vlasništvo</translation>
+        <source>Sign messages with your LUX addresses to prove you own them</source>
+        <translation>Potpišite poruke sa svojim LUX adresama da biste dokazali njihovo vlasništvo</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>Proverite poruke da biste utvrdili sa kojim Qtum adresama su potpisane</translation>
+        <source>Verify messages to ensure they were signed with specified LUX addresses</source>
+        <translation>Proverite poruke da biste utvrdili sa kojim LUX adresama su potpisane</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -402,8 +402,8 @@
         <translation>Alatke za tabove</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation>Zatražite plaćanje (generiše QR kodove i qtum: URI-e)</translation>
+        <source>Request payments (generates QR codes and LUX: URIs)</source>
+        <translation>Zatražite plaćanje (generiše QR kodove i LUX: URI-e)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -522,7 +522,7 @@
     <name>Intro</name>
     <message>
         <source>Qtum</source>
-        <translation>Qtum</translation>
+        <translation>LUX</translation>
     </message>
     <message>
         <source>Error</source>

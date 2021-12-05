@@ -8,7 +8,7 @@ QWidget{
 Main Window CSS
 --------------------------------------------*/
 QMainWindow{
-    background-color: #4f9fde;
+    background-color: #031D56;
     border: 0px solid transparent;
     background-image: url(":/styles/theme3/app-icons/bg");
     background-position: bottom left;
@@ -58,12 +58,14 @@ QDialog{
     background-color: #f2f7fd;
 }
 QLabel{
-    color: #6b80af;
+    color: #002A64;
 }
 QLabel::disabled{
     color: rgba(107, 128, 175, 20%);
 }
-QLabel#labelGeneral,
+QLabel#labelTotal,
+#labelWatchTotal,
+#labelGeneral,
 #labelNetwork,
 #labelBlockChain,
 #labelMempoolTitle{
@@ -73,23 +75,23 @@ QLabel#labelGeneral,
     background-color: #e4ebf5;
 }
 QLabel#overriddenByCommandLineLabel{
-    color: #6b80af;
+    color: #002A64;
 }
 NavigationBar #labelLogo{
     image:url(":/icons/logo");
 }
 NavigationBar #hLineLogo,
 NavigationBar #hLineStatus{
-    border-top: 1px solid #61a9e1;
+    border-top: 1px solid #031D56;
 }
 /*-------------------------------------------- 
 Line Edit CSS
 --------------------------------------------*/
 QLineEdit{
     border: 1px solid #d5dde9;
-    border-radius: 14px;
+    border-radius: 12px;
     background-color: #ffffff;
-    color: #6b80af;
+    color: #002A64;
     padding: 4px;
 }
 QLineEdit::hover:!read-only{
@@ -108,14 +110,17 @@ QAbstractItemView#autoCompleterPopup{
     padding: 4px;
 }
 QAbstractItemView#autoCompleterPopup::item{
+    border: none;
+    border-radius: 10px;
     background-color: #e4ebf5;
-    color: #6b80af;
+    color: #002A64;
     padding: 4px;
     padding-left: 10px;
 }
 QAbstractItemView#autoCompleterPopup::item:selected {
-    background-color: #6b80af;
+    background-color: #002A64;
     color: #ffffff;
+    padding: 4px;
 }
 /*--------------------------------------------
 List Viev CSS
@@ -129,9 +134,9 @@ Combo Box CSS
 --------------------------------------------*/
 QComboBox {
     border: 1px solid #d5dde9;
-    border-radius: 14px;
+    border-radius: 12px;
     background-color: #ffffff;
-    color: #6b80af;
+    color: #002A64;
     padding: 4px;
     padding-left: 10px;
     padding-right: 8px;
@@ -146,27 +151,30 @@ QComboBox:drop-down {
     margin-left: -8px;
 }
 QComboBox:down-arrow {
-    image: url(":/styles/theme2/app-icons/down_arrow");
+    image: url(":/styles/theme3/app-icons/down_arrow");
     width: 6px;
     height: 10px;
     top: 1px;
 }
 QComboBox QAbstractItemView::item {
+    border: none;
+    border-radius: 10px;
     background-color: #d5dde9;
-    color: #6b80af;
+    color: #002A64;
     padding: 4px;
     padding-left: 10px;
 }
 QComboBox QAbstractItemView::item:selected {
-    background-color: #6b80af;
+    background-color: #002A64;
     color: #ffffff;
+    padding: 4px;
 }
 QComboBox QAbstractItemView{
     background-color: #d5dde9;
     border: none;
-    border-radius: 6px;
-    padding: 6px 0px;
-    margin-top: 5px;
+    border-radius: 10px;
+    padding: 4px;
+    margin-top: 3px;
     margin-bottom: 3px;
 }
 QComboBox::disabled {
@@ -177,7 +185,7 @@ QComboBox:drop-down:disabled {
     border-left: 1px solid rgba(209, 219, 231, 40%);
 }
 QComboBox::down-arrow:disabled {
-    image: url(":/styles/theme2/app-icons/down_arrow_disabled");
+    image: url(":/styles/theme3/app-icons/down_arrow_disabled");
 }
 /*--------------------------------------------
 Group Box CSS
@@ -189,7 +197,7 @@ QGroupBox
     background-color: #f2f7fd;
 }
 QGroupBox::title {
-    color: #6b80af;
+    color: #002A64;
     subcontrol-position: top left;
     left: -3px;
     padding: -40px 3px 0px 3px;
@@ -217,12 +225,12 @@ QSlider::groove:horizontal {
     right: 7px;
 }
 QSlider::handle:horizontal {
-    background-image: url(":/styles/theme2/app-icons/slider_switcher");
+    background-image: url(":/styles/theme3/app-icons/slider_switcher");
     background-repeat: none;
     margin: 2px -10px -2px;
 }
 QSlider::handle:horizontal:active {
-    background-image: url(":/styles/theme2/app-icons/slider_switcher_hover");
+    background-image: url(":/styles/theme3/app-icons/slider_switcher_hover");
     background-repeat: none;
     margin: 2px -10px -2px;
 }
@@ -247,7 +255,7 @@ QSlider::sub-page:horizontal:disabled {
     border-left: 1px solid rgba(73, 142, 169, 40%);
 }
 QSlider::handle:horizontal:disabled {
-    background-image: url(":/styles/theme2/app-icons/slider_switcher_disabled");
+    background-image: url(":/styles/theme3/app-icons/slider_switcher_disabled");
 }
 /*--------------------------------------------
 Spin Box CSS
@@ -258,8 +266,8 @@ QAbstractSpinBox {
     background-position: right;
     background-repeat: no-repeat;
     border: 1px solid #d5dde9;
-    border-radius: 14px;
-    color: #6b80af;
+    border-radius: 12px;
+    color: #002A64;
     padding-left: 12px;
 }
 QAbstractSpinBox:hover {
@@ -281,24 +289,24 @@ QAbstractSpinBox::down-button {
     border-bottom-right-radius: 12px;
 }
 QAbstractSpinBox::up-arrow {
-    image: url(":/styles/theme2/app-icons/up_arrow");
+    image: url(":/styles/theme3/app-icons/up_arrow");
     width: 6px;
     height: 4px;
     margin-right: 5px;
     margin-top: 5px;
 }
 QAbstractSpinBox::down-arrow {
-    image: url(":/styles/theme2/app-icons/down_arrow");
+    image: url(":/styles/theme3/app-icons/down_arrow");
     width: 6px;
     height: 4px;
     margin-right: 5px;
     margin-bottom: 5px;
 }
 QAbstractSpinBox::up-arrow:hover{
-    image: url(":/styles/theme2/app-icons/up_arrow_hover");
+    image: url(":/styles/theme3/app-icons/up_arrow_hover");
 }
 QAbstractSpinBox::down-arrow:hover{
-    image: url(":/styles/theme2/app-icons/down_arrow_hover");
+    image: url(":/styles/theme3/app-icons/down_arrow_hover");
 }
 QAbstractSpinBox::disabled {
     border: 1px solid rgba(209, 219, 231, 40%);
@@ -312,11 +320,11 @@ QAbstractSpinBox::down-button:disabled {
 }
 QAbstractSpinBox::up-arrow:disabled,
 QAbstractSpinBox::up-arrow:off {
-    image: url(":/styles/theme2/app-icons/up_arrow_disabled");
+    image: url(":/styles/theme3/app-icons/up_arrow_disabled");
 }
 QAbstractSpinBox::down-arrow:disabled,
 QAbstractSpinBox::down-arrow:off {
-    image: url(":/styles/theme2/app-icons/down_arrow_disabled");
+    image: url(":/styles/theme3/app-icons/down_arrow_disabled");
 }
 /*--------------------------------------------
 Scroll Area CSS
@@ -369,8 +377,8 @@ QTextEdit QScrollBar:vertical {
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
     background: #ffffff;
-    width: 12px;
-    padding: 5px 0px 5px 2px;
+    width: 19px;
+    padding: 10px 4px;
 }
 QTextEdit QScrollBar::handle:vertical {
     border: none;
@@ -386,8 +394,8 @@ QPlainTextEdit QScrollBar:vertical {
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
     background: #ffffff;
-    width: 12px;
-    padding: 5px 0px 5px 2px;
+    width: 19px;
+    padding: 10px 4px;
 }
 QPlainTextEdit QScrollBar::handle:vertical {
     border: none;
@@ -399,12 +407,12 @@ QPlainTextEdit QScrollBar::handle:vertical:disabled {
     background: rgba(209, 219, 231, 40%);
 }
 QComboBox QScrollBar:vertical {
-    border-radius: 0px;
+    border-radius: 7px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     background: #d5dde9;
-    width: 10px;
-    padding: 0px 0px;
+    width: 16px;
+    padding: 5px 4px;
 }
 QComboBox QScrollBar::handle:vertical {
     border: none;
@@ -455,7 +463,7 @@ QScrollBar::handle:horizontal:disabled {
 Table View CSS
 --------------------------------------------*/
 QHeaderView{
-    color: #6b80af;
+    color: #002A64;
     background-color: transparent;
     border: none;
 }
@@ -465,21 +473,21 @@ QHeaderView:section{
     background-color: #e4ebf5;
 }
 QHeaderView::down-arrow {
-    image: url(":/styles/theme2/app-icons/down_arrow");
+    image: url(":/styles/theme3/app-icons/down_arrow");
     width: 6px;
     height: 4px;
     margin-right: 5px;
     margin-bottom: 1px;
 }
 QHeaderView::up-arrow {
-    image: url(":/styles/theme2/app-icons/up_arrow");
+    image: url(":/styles/theme3/app-icons/up_arrow");
     width: 6px;
     height: 4px;
     margin-right: 5px;
     margin-bottom: 1px;
 }
 QTableView{
-    color: #6b80af;
+    color: #002A64;
     background-color: #ffffff;
     border: none;
     font: normal;
@@ -492,19 +500,19 @@ QTableView::item{
 }
 QTableView::item:selected{
     qproperty-showGrid: false;
-    background: #26a1e3;
+    background: #002A64;
     color: #ffffff;
 }
 QHeaderView::disabled{
     color: rgba(107, 128, 175, 20%);
 }
 QHeaderView::down-arrow:disabled {
-    image: url(":/styles/theme2/app-icons/down_arrow_disabled");
+    image: url(":/styles/theme3/app-icons/down_arrow_disabled");
     width: 6px;
     height: 4px;
 }
 QHeaderView::up-arrow:disabled {
-    image: url(":/styles/theme2/app-icons/up_arrow_disabled");
+    image: url(":/styles/theme3/app-icons/up_arrow_disabled");
     width: 6px;
     height: 4px;
 }
@@ -516,7 +524,7 @@ QTextEdit CSS
 --------------------------------------------*/
 QTextEdit {
     border: 1px solid #d5dde9;
-    border-radius: 14px;
+    border-radius: 12px;
     background-color: #ffffff;
     color: #000000;
     padding-left: 5px;
@@ -536,7 +544,7 @@ QPlainTextEdit CSS
 --------------------------------------------*/
 QPlainTextEdit {
     border: 1px solid #d5dde9;
-    border-radius: 14px;
+    border-radius: 12px;
     background-color: #ffffff;
     color: #000000;
     padding-left: 5px;
@@ -556,11 +564,11 @@ Status Bar CSS
 --------------------------------------------*/
 QStatusBar{
     background: #e4ebf5;
-    color: #6b80af;
+    color: #002A64;
 }
 QStatusBar QLabel{
     border: 1px solid transparent;
-    color: #6b80af;
+    color: #002A64;
     font: 10pt;
 }
 QStatusBar::item {
@@ -573,26 +581,29 @@ QStatusBar QLabel::disabled{
 UnitDisplayStatusBarControl {
     color: #ffffff; 
     background: transparent;
-    border: 1px solid #73bdec;
+    border: 1px solid #031D56;
     border-radius: 12px;
     font: 16px;
     padding: 0px;
 }
 UnitDisplayStatusBarControl QMenu::item {
+    border: none;
+    border-radius: 10px;
     background-color: #d5dde9;
-    color: #6b80af;
+    color: #002A64;
     padding: 4px;
     padding-left: 10px;
 }
 UnitDisplayStatusBarControl QMenu::item:selected {
-    background-color: #6b80af;
+    background-color: #002A64;
     color: #ffffff;
+    padding: 4px;
 }
 UnitDisplayStatusBarControl QMenu{
     background-color: #d5dde9;
     border: none;
-    border-radius: 6px;
-    padding: 10px 0px;
+    border-radius: 10px;
+    padding: 4px;
     margin: 0px;
 }
 /*--------------------------------------------
@@ -601,12 +612,12 @@ Progress Bar CSS
 QProgressBar {
     background-color: #f2f7fd;
     font: 10pt;
-    color: #94ccf2;
+    color: #0088D0;
     border-radius: 0px;
     text-align: center;
 }
 QProgressBar::chunk {
-    background-color: #26a1e3;
+    background-color: #002A64;
     border-radius: 0px;
 }
 QProgressBar::disabled {
@@ -631,8 +642,8 @@ QTabBar::tab:selected {
     border-bottom: 3px solid #4d6087;
 }
 QTabBar::tab:hover:!selected {
-    color: #18aae0;
-    border-bottom: 3px solid #18aae0;
+    color: #002A64;
+    border-bottom: 3px solid #002A64;
 }
 QTabBar::tab:disabled {
     color: rgba(107, 128, 175, 20%);
@@ -643,7 +654,7 @@ QTabWidget::pane {
     background-color: #f2f7fd;
 }
 TitleBar QTabBar::tab {
-    padding: 5px 0px;
+    padding: 5px 10px;
 }
 #widgetTitle, #widgetWallet {
     background-color: #f2f7fd;
@@ -658,11 +669,11 @@ QMenuBar::item {
     background-color: transparent;
     padding: 5px 6px;
     border-radius: 4px;
-    color: #6b80af;
+    color: #002A64;
 }
 QMenuBar::item:selected {
     border: none;
-    color: #26a1e3;
+    color: #002A64;
 }
 QMenuBar::item:disabled {
     color: rgba(107, 128, 175, 20%);
@@ -677,10 +688,10 @@ QMenu::item {
     border: none;
     padding: 5px 32px;
     background-color: #d5dde9;
-    color: #6b80af;
+    color: #002A64;
 }
 QMenu::item:selected {
-    background-color: #6b80af;
+    background-color: #002A64;
     color:#ffffff;
 }
 QMenu::separator{
@@ -697,11 +708,11 @@ QMenu::item:disabled {
 Check Box CSS
 --------------------------------------------*/
 QCheckBox{
-    color: #6b80af;
+    color: #002A64;
     outline-style: none;
 }
 QCheckBox:hover, QCheckBox:checked {
-    color: #6b80af;
+    color: #002A64;
 }
 QCheckBox:disabled {
     color: rgba(107, 128, 175, 20%);
@@ -711,41 +722,41 @@ QCheckBox::indicator {
     height: 16px;
 }
 QCheckBox::indicator::unchecked {
-    image: url(:/styles/theme2/app-icons/checkbox_unchecked);
+    image: url(:/styles/theme3/app-icons/checkbox_unchecked);
 }
 QCheckBox::indicator::checked {
-    image: url(:/styles/theme2/app-icons/checkbox_checked);
+    image: url(:/styles/theme3/app-icons/checkbox_checked);
 }
 QCheckBox:indicator:indeterminate {
-    image: url(:/styles/theme2/app-icons/checkbox_indeterminate);
+    image: url(:/styles/theme3/app-icons/checkbox_indeterminate);
 }
 QCheckBox::indicator::unchecked:hover {
-    image: url(:/styles/theme2/app-icons/checkbox_unchecked_hover);
+    image: url(:/styles/theme3/app-icons/checkbox_unchecked_hover);
 }
 QCheckBox::indicator::checked:hover {
-    image: url(:/styles/theme2/app-icons/checkbox_checked_hover);
+    image: url(:/styles/theme3/app-icons/checkbox_checked_hover);
 }
 QCheckBox:indicator:indeterminate:hover {
-    image: url(:/styles/theme2/app-icons/checkbox_indeterminate_hover);
+    image: url(:/styles/theme3/app-icons/checkbox_indeterminate_hover);
 }
 QCheckBox:indicator:unchecked:disabled {
-    image: url(:/styles/theme2/app-icons/checkbox_unchecked_disabled);  
+    image: url(:/styles/theme3/app-icons/checkbox_unchecked_disabled);  
 }
 QCheckBox:indicator:checked:disabled {
-    image: url(:/styles/theme2/app-icons/checkbox_checked_disabled);
+    image: url(:/styles/theme3/app-icons/checkbox_checked_disabled);
 }
 QCheckBox:indicator:indeterminate:disabled {
-    image: url(:/styles/theme2/app-icons/checkbox_indeterminate_disabled);
+    image: url(:/styles/theme3/app-icons/checkbox_indeterminate_disabled);
 }
 /*--------------------------------------------
 Radio Button CSS
 --------------------------------------------*/
 QRadioButton{
-    color: #6b80af;
+    color: #002A64;
     outline-style: none;
 }
 QRadioButton:hover, QRadioButton:checked {
-    color: #6b80af;
+    color: #002A64;
 }
 QRadioButton:disabled {
     color: rgba(107, 128, 175, 20%);
@@ -755,22 +766,22 @@ QRadioButton::indicator {
     height: 16px;
 }
 QRadioButton::indicator::unchecked {
-    image: url(:/styles/theme2/app-icons/radiobutton_unchecked);
+    image: url(:/styles/theme3/app-icons/radiobutton_unchecked);
 }
 QRadioButton::indicator::checked {
-    image: url(:/styles/theme2/app-icons/radiobutton_checked);
+    image: url(:/styles/theme3/app-icons/radiobutton_checked);
 }
 QRadioButton::indicator::unchecked:hover {
-    image: url(:/styles/theme2/app-icons/radiobutton_unchecked_hover);
+    image: url(:/styles/theme3/app-icons/radiobutton_unchecked_hover);
 }
 QRadioButton::indicator::checked:hover {
-    image: url(:/styles/theme2/app-icons/radiobutton_checked_hover);
+    image: url(:/styles/theme3/app-icons/radiobutton_checked_hover);
 }
 QRadioButton:indicator:unchecked:disabled {
-    image: url(:/styles/theme2/app-icons/radiobutton_unchecked_disabled);  
+    image: url(:/styles/theme3/app-icons/radiobutton_unchecked_disabled);  
 }
 QRadioButton:indicator:checked:disabled {
-    image: url(:/styles/theme2/app-icons/radiobutton_checked_disabled);
+    image: url(:/styles/theme3/app-icons/radiobutton_checked_disabled);
 }
 /*--------------------------------------------
 Dialogs CSS
@@ -818,10 +829,10 @@ QBalloonTip QPushButton::disabled {
 Push Button CSS
 --------------------------------------------*/
 QPushButton {
-    color: #26a1e3; 
+    color: #002A64; 
     background: transparent;
     border: 1px solid #d5dde9;
-    border-radius: 14px;
+    border-radius: 12px;
     min-width: 5em;
     padding: 6px;
     margin: 0px;
@@ -830,7 +841,7 @@ QPushButton:hover{
     border: 1px solid #cbd5e1;
 }
 QPushButton:pressed {
-    background: #1498df;
+    background: #031D56;
     color: #ffffff;
 }
 QPushButton::disabled {
@@ -894,7 +905,7 @@ QDateTimeEdit:drop-down {
     margin-left: -8px;
 }
 QDateTimeEdit::down-arrow:hover, QDateTimeEdit:down-arrow {
-    image: url(":/styles/theme2/app-icons/cb_up_down_arrow");
+    image: url(":/styles/theme3/app-icons/cb_up_down_arrow");
     width: 6px;
     height: 10px;
     top: 1px;
@@ -923,7 +934,7 @@ QCalendarWidget QAbstractItemView
 {
     background-color: #373535;
     alternate-background-color: #2E2C2C;
-    color: #6b80af;
+    color: #002A64;
     padding-bottom:-1px;
 }
 QCalendarWidget QAbstractItemView:disabled {
@@ -941,11 +952,11 @@ Modal Overlay CSS
     height: 9px;
 }
 #ModalOverlay QProgressBar::chunk {
-    background-color: #26a1e3;
+    background-color: #002A64;
     border-radius: 4px;
 }
 #ModalOverlay QLabel { 
-    color: #6b80af;  
+    color: #002A64;  
 }
 #ModalOverlay #labelNumberOfBlocksLeft, 
 #ModalOverlay #labelLastBlockTime, 
@@ -972,15 +983,16 @@ Watch Only Widget CSS
     padding: 4px;
 }
 #watchOnlyWidget QAbstractItemView::item, 
-#watchOnlyWidget QAbstractItemView::item:selected {
-    padding: 4px;
-    padding-left: 8px;
-    padding-right: 8px;
+#watchOnlyWidget QAbstractItemView::item:selected, 
+#watchOnlyWidget QAbstractItemView{
+    padding-left: 0px; 
+    padding: 4px; 
 } 
 #watchOnlyWidget QAbstractItemView {
     padding: 4px;
     padding-left: 0px;
     padding-right: 0px;
+    padding: 4px;
 }
 /*--------------------------------------------
 Tab Bar close button CSS
@@ -1003,6 +1015,7 @@ Stake Page Widget CSS
     border: 1px dotted #b5bfd7;
     color: #b5bfd7;
     border-radius: 4px;
+    margin-top: 20px;
 }
 #frameStakeInfo #labelAssets{
     color: #000000;
@@ -1013,7 +1026,7 @@ Stake Page Widget CSS
 #frameStakeInfo #labelReward,
 #frameStakeInfo #labelROI,
 #frameStakeInfo #labelStaking{
-    color: #6b80af;
+    color: #002A64;
 }
 #frameStakeInfo #hLine{
     border-top: 1px solid #e4ebf5;
@@ -1038,12 +1051,11 @@ Overview Page Widget CSS
     width: 32px;
     height: 32px;
     border-radius: 16px;
-    background-color: #ffffff;
+    background-color: #031D56;
     image:url(":/icons/bitcoin");
     padding: 5px;
     border: 1px solid #e3eaf3;
 }
-
 #widgetRecent #showMoreButton{
     min-width: 3em;
     padding: 1px;
@@ -1056,11 +1068,15 @@ Overview Page Widget CSS
     padding: 6px;
     min-width: 8em;
     border-radius: 18px;
-    border: 1px solid #4f9fde;
+    border: 1px solid #031D56;
 }
 /*--------------------------------------------
 Token Page Widget CSS
 --------------------------------------------*/
+#labelTokenAddressText, 
+#labelTokenBalanceText{
+    color: #000000;
+}
 #labelTokenBalance{
     color: #000000;
 }
@@ -1087,8 +1103,9 @@ Token Page Widget CSS
 TokenListWidget{
     background-color: #e4ebf5;
 }
-TokenItemWidget #tokenName{
-    color: #6b80af;
+TokenItemWidget #tokenName,
+#labelNewToken{
+    color: #002A64;
     font: 13pt;
 }
 TokenItemWidget #tokenBalance{
@@ -1100,14 +1117,15 @@ TokenItemWidget #senderAddress{
     font: 10pt;
 }
 TokenItemWidget #tokenLogo{
-    background-color: #a1daff;
+    background-color: #031D56;
     border-radius: 20px;
 }
 DelegationListWidget{
     background-color: #e4ebf5;
 }
-DelegationItemWidget #labelFee{
-    color: #6b80af;
+DelegationItemWidget #labelFee,
+#labelNewDelegation{
+    color: #002A64;
     font: 13pt;
 }
 DelegationItemWidget #labelStaker{
@@ -1119,14 +1137,18 @@ DelegationItemWidget #labelAddress{
     font: 10pt;
 }
 DelegationItemWidget #delegationLogo{
-    background-color: #a1daff;
+    background-color: #031D56;
     border-radius: 20px;
+}
+#coinControlContentsWidget{
+    background-color: #031D56;
 }
 SuperStakerListWidget{
     background-color: #e4ebf5;
 }
-SuperStakerItemWidget #labelFee{
-    color: #6b80af;
+SuperStakerItemWidget #labelFee,
+#labelNewSuperStaker{
+    color: #002A64;
     font: 13pt;
 }
 SuperStakerItemWidget #labelStaker{
@@ -1138,7 +1160,7 @@ SuperStakerItemWidget #labelAddress{
     font: 10pt;
 }
 SuperStakerItemWidget #superStakerLogo{
-    background-color: #a1daff;
+    background-color: #031D56;
     border-radius: 20px;
 }
 SuperStakerItemWidget #buttonDelegations{

@@ -50,7 +50,7 @@
         <translation>গ্রহণের ঠিকানা</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your LUX addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>এগুলো আপনার পেমেন্ট পাঠানোর বিটকয়েন ঠিকানা। কয়েন পাঠানোর আগে পরিমাণ ও গ্রহণের ঠিকানা সব সময় যাচাই করুন।</translation>
     </message>
     <message>
@@ -132,7 +132,7 @@
         <translation>ওয়ালেট এনক্রিপশন নিশ্চিত করুন</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR  LUX&lt;/b&gt;!</source>
         <translation>সতর্কতা : ওয়ালেট এনক্রিপ্ট করে পাসফ্রেজ ভুলে গেলে আপনি &lt;b&gt;সব বিটকয়েন হারাবেন&lt;/b&gt;!</translation>
     </message>
     <message>

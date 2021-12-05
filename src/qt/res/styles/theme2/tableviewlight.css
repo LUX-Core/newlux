@@ -4,18 +4,24 @@ Table View light CSS
 QHeaderView{
     color: #49587a;
     background-color: #1A233A;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+    border: none;
 }
 QHeaderView:section{
     background-color: #1A233A;
-    margin-top: 3px;
+    border: none;
+    background-color: transparent;
 }
 QHeaderView::down-arrow {
-    margin-top: 3px;
+    width: 6px;
+    height: 4px;
+    margin-right: 5px;
+    margin-bottom: 1px;
 }
 QHeaderView::up-arrow {
-    margin-top: 3px;
+    width: 6px;
+    height: 4px;
+    margin-right: 5px;
+    margin-bottom: 1px;
 }
 QTableView{
     background-color: #1A233A;

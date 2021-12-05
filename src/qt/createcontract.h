@@ -23,6 +23,7 @@ public:
     explicit CreateContract(const PlatformStyle *platformStyle, QWidget *parent = 0);
     ~CreateContract();
 
+    void setLinkLabels();
     void setClientModel(ClientModel *clientModel);
     void setModel(WalletModel *model);
     bool isValidBytecode();

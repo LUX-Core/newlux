@@ -104,7 +104,7 @@
     <name>Intro</name>
     <message>
         <source>Qtum</source>
-        <translation>Qtum</translation>
+        <translation>LUX</translation>
     </message>
     <message>
         <source>Error</source>

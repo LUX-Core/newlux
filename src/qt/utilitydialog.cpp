@@ -24,6 +24,7 @@
 #include <QTextCursor>
 #include <QTextTable>
 #include <QVBoxLayout>
+#include <QSettings>
 
 /** "Help message" or "About" dialog box */
 HelpMessageDialog::HelpMessageDialog(interfaces::Node& node, QWidget *parent, bool about) :
@@ -56,7 +57,7 @@ HelpMessageDialog::HelpMessageDialog(interfaces::Node& node, QWidget *parent, bo
         ui->helpMessage->setVisible(false);
     } else {
         setWindowTitle(tr("Command-line options"));
-        QString header = "Usage:  qtum-qt [command-line options]                     \n";
+        QString header = "Usage:  LUX-qt [command-line options]                     \n";
         QTextCursor cursor(ui->helpMessage->document());
         cursor.insertText(version);
         cursor.insertBlock();
@@ -131,15 +132,31 @@ void HelpMessageDialog::on_okButton_accepted()
     close();
 }
 
-
 /** "Shutdown" window */
 ShutdownWindow::ShutdownWindow(QWidget *parent, Qt::WindowFlags f):
     QWidget(parent, f)
 {
-    QVBoxLayout *layout = new QVBoxLayout();
-    layout->addWidget(new QLabel(
-        tr("%1 is shutting down...").arg(PACKAGE_NAME) + "<br /><br />" +
-        tr("Do not shut down the computer until this window disappears.")));
+	
+    QSettings settings;
+    QLabel* shutdownText = new QLabel(
+                                tr("Application is shutting down... <br /><br />") +
+                                tr("Do not shut down the computer until this window disappears."));
+    QLabel* shutdownLogo = new QLabel();
+    shutdownText->setAlignment(Qt::AlignCenter);
+    shutdownLogo->setAlignment(Qt::AlignCenter);
+
+    QVBoxLayout* layout = new QVBoxLayout();
+
+    shutdownLogo->setPixmap(QPixmap(":/icons/logo_letters").scaled(180,45,Qt::KeepAspectRatio, Qt::SmoothTransformation));
+    shutdownText->setStyleSheet("color: #ffffff;");
+    shutdownLogo->setStyleSheet("padding: 10px 0 20px 0;");
+	
+    layout->addStretch();
+    layout->addWidget(shutdownLogo);
+    layout->addStretch();
+    layout->addWidget(shutdownText);
+    layout->addStretch();
+
     setLayout(layout);
 }
 
@@ -147,10 +164,14 @@ QWidget* ShutdownWindow::showShutdownWindow(QMainWindow* window)
 {
     assert(window != nullptr);
 
+    QSettings settings;
+
     // Show a simple window indicating shutdown status
     QWidget *shutdownWindow = new ShutdownWindow();
     shutdownWindow->setObjectName("shutdownWindow");
     shutdownWindow->setWindowTitle(window->windowTitle());
+
+    shutdownWindow->setStyleSheet("background-color: #031D56;");
 
     // Center shutdown window at where main window was
     const QPoint global = window->mapToGlobal(window->rect().center());

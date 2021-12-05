@@ -66,11 +66,11 @@
         <translation>Přijímací adresy</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your LUX addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>Tohle jsou tvé qtumové adresy pro posílání plateb. Před odesláním mincí si vždy zkontroluj částku a cílovou adresu.</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <source>These are your LUX addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
         <translation>Tohle jsou tvé qtumové adresy pro příjem plateb. Použij 'Vytvoř novou přijímací adresu' v záložce Přijmi pro vytvoření nové adresy.</translation>
     </message>
     <message>
@@ -168,7 +168,7 @@
         <translation>Potvrď zašifrování peněženky</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR  LUX&lt;/b&gt;!</source>
         <translation>Upozornění: Pokud si zašifruješ peněženku a ztratíš či zapomeneš heslo, &lt;b&gt;PŘIJDEŠ O VŠECHNY QTUMY&lt;/b&gt;!</translation>
     </message>
     <message>
@@ -188,7 +188,7 @@
         <translation>Zadej staré a nové heslo k peněžence.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your qtums from being stolen by malware infecting your computer.</source>
+        <source>Remember that encrypting your wallet cannot fully protect your LUX from being stolen by malware infecting your computer.</source>
         <translation>Pamatujte, že zašifrování peněženky nemůže plně ochránit vaše qtumy před krádeží, pokud by byl váš počítač napadem malwarem.</translation>
     </message>
     <message>
@@ -362,7 +362,7 @@
         <translation>Proxy je &lt;b&gt;zapnutá&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
+        <source>Send coins to a LUX address</source>
         <translation>Pošli mince na qtumovou adresu</translation>
     </message>
     <message>
@@ -398,11 +398,11 @@
         <translation>Zašifruj soukromé klíče ve své peněžence</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
+        <source>Sign messages with your LUX addresses to prove you own them</source>
         <translation>Podepiš zprávy svými qtumovými adresami, čímž prokážeš, že jsi jejich vlastníkem</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
+        <source>Verify messages to ensure they were signed with specified LUX addresses</source>
         <translation>Ověř zprávy, aby ses ujistil, že byly podepsány danými qtumovými adresami</translation>
     </message>
     <message>
@@ -422,8 +422,8 @@
         <translation>Panel s listy</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation>Požaduj platby (generuje QR kódy a qtum: URI)</translation>
+        <source>Request payments (generates QR codes and LUX: URIs)</source>
+        <translation>Požaduj platby (generuje QR kódy a LUX: URI)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -438,7 +438,7 @@
         <translation>Ar&amp;gumenty příkazové řádky</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Qtum network</source>
+        <source>%n active connection(s) to LUX network</source>
         <translation><numerusform>%n aktivní spojení do qtumové sítě</numerusform><numerusform>%n aktivní spojení do qtumové sítě</numerusform><numerusform>%n aktivních spojení do qtumové sítě</numerusform><numerusform>%n aktivních spojení do qtumové sítě</numerusform></translation>
     </message>
     <message>
@@ -498,8 +498,8 @@
         <translation>Přijímací adresy</translation>
     </message>
     <message>
-        <source>Open a qtum: URI</source>
-        <translation>Načíst Qtum: URI</translation>
+        <source>Open a LUX: URI</source>
+        <translation>Načíst LUX: URI</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -518,7 +518,7 @@
         <translation>Zavřít peněženku</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Qtum command-line options</source>
+        <source>Show the %1 help message to get a list with possible LUX command-line options</source>
         <translation>Seznam argumentů Qtumu pro příkazovou řádku získáš v nápovědě %1</translation>
     </message>
     <message>
@@ -630,8 +630,8 @@
         <translation>Peněženka je &lt;b&gt;zašifrovaná&lt;/b&gt; a momentálně &lt;b&gt;zamčená&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Qtum can no longer continue safely and will quit.</source>
-        <translation>Stala se fatální chyba. Qtum nemůže bezpečně pokračovat v činnosti, a proto skončí.</translation>
+        <source>A fatal error occurred. LUX can no longer continue safely and will quit.</source>
+        <translation>Stala se fatální chyba. LUX nemůže bezpečně pokračovat v činnosti, a proto skončí.</translation>
     </message>
 </context>
 <context>
@@ -874,7 +874,7 @@
         <translation>Uprav odesílací adresu</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Qtum address.</source>
+        <source>The entered address "%1" is not a valid LUX address.</source>
         <translation>Zadaná adresa „%1“ není platná qtumová adresa.</translation>
     </message>
     <message>
@@ -972,7 +972,7 @@
     </message>
     <message>
         <source>Qtum</source>
-        <translation>Qtum</translation>
+        <translation>LUX</translation>
     </message>
     <message>
         <source>Discard blocks after verification, except most recent %1 GB (prune)</source>
@@ -987,7 +987,7 @@
         <translation>Bude proto potřebovat do tohoto adresáře uložit přibližně %1 GB dat.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Qtum block chain.</source>
+        <source>%1 will download and store a copy of the LUX block chain.</source>
         <translation>%1 bude stahovat kopii blockchainu.</translation>
     </message>
     <message>
@@ -1022,11 +1022,11 @@
         <translation>Formulář</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the qtum network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the LUX network, as detailed below.</source>
         <translation>Nedávné transakce ještě nemusí být vidět, takže stav tvého účtu nemusí být platný. Jakmile se však tvá peněženka dosynchronizuje s qtumovou sítí (viz informace níže), tak už bude stav správně.</translation>
     </message>
     <message>
-        <source>Attempting to spend qtums that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend LUX that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation>Utrácení qtumů, které už utratily zatím nezobrazené transakce, nebude qtumovou sítí umožněno.</translation>
     </message>
     <message>
@@ -1077,8 +1077,8 @@
 <context>
     <name>OpenURIDialog</name>
     <message>
-        <source>Open qtum URI</source>
-        <translation>Otevřít qtum URI</translation>
+        <source>Open LUX URI</source>
+        <translation>Otevřít LUX URI</translation>
     </message>
     <message>
         <source>URI:</source>
@@ -1223,7 +1223,7 @@
         <translation>&amp;Utrácet i ještě nepotvrzené drobné</translation>
     </message>
     <message>
-        <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the LUX client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>Automaticky otevře potřebný port na routeru. Tohle funguje jen za předpokladu, že tvůj router podporuje UPnP a že je UPnP povolené.</translation>
     </message>
     <message>
@@ -1239,7 +1239,7 @@
         <translation>Přijí&amp;mat příchozí spojení</translation>
     </message>
     <message>
-        <source>Connect to the Qtum network through a SOCKS5 proxy.</source>
+        <source>Connect to the LUX network through a SOCKS5 proxy.</source>
         <translation>Připojí se do qtumové sítě přes SOCKS5 proxy.</translation>
     </message>
     <message>
@@ -1275,7 +1275,7 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Qtum network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <source>Connect to the LUX network through a separate SOCKS5 proxy for Tor hidden services.</source>
         <translation>Připojí se do qtumové sítě přes SOCKS5 proxy vyhrazenou pro skryté služby v Tor síti.</translation>
     </message>
     <message>
@@ -1386,7 +1386,7 @@
         <translation>Formulář</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Qtum network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the LUX network after a connection is established, but this process has not completed yet.</source>
         <translation>Zobrazené informace nemusí být aktuální. Tvá peněženka se automaticky sesynchronizuje s qtumovou sítí, jakmile se s ní spojí. Zatím ale ještě není synchronizace dokončena.</translation>
     </message>
     <message>
@@ -1461,16 +1461,16 @@
         <translation>Chyba platebního požadavku</translation>
     </message>
     <message>
-        <source>Cannot start qtum: click-to-pay handler</source>
-        <translation>Nemůžu spustit qtum: obsluha click-to-pay</translation>
+        <source>Cannot start LUX: click-to-pay handler</source>
+        <translation>Nemůžu spustit LUX: obsluha click-to-pay</translation>
     </message>
     <message>
         <source>URI handling</source>
         <translation>Zpracování URI</translation>
     </message>
     <message>
-        <source>'qtum://' is not a valid URI. Use 'qtum:' instead.</source>
-        <translation>'qtum://' není platné URI. Místo toho použij 'qtum:'.</translation>
+        <source>'LUX://' is not a valid URI. Use 'LUX:' instead.</source>
+        <translation>'LUX://' není platné URI. Místo toho použij 'LUX:'.</translation>
     </message>
     <message>
         <source>Cannot process payment request because BIP70 is not supported.</source>
@@ -1489,7 +1489,7 @@
         <translation>Neplatná platební adresa %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Qtum address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid LUX address or malformed URI parameters.</source>
         <translation>Nepodařilo se analyzovat URI! Důvodem může být neplatná qtumová adresa nebo poškozené parametry URI.</translation>
     </message>
     <message>
@@ -1531,7 +1531,7 @@
         <translation>Částka</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a LUX address (e.g. %1)</source>
         <translation>Zadej qtumovou adresu (např. %1)</translation>
     </message>
     <message>
@@ -2000,7 +2000,7 @@
         <translation>&amp;Zpráva:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Qtum network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the LUX network.</source>
         <translation>Volitelná zpráva, která se připojí k platebnímu požadavku a která se zobrazí, když se požadavek otevře. Poznámka: tahle zpráva se neposílá s platbou po qtumové síti.</translation>
     </message>
     <message>
@@ -2281,7 +2281,7 @@ Poznámka: Jelikož je poplatek počítaný za bajt, poplatek o hodnotě "100 sa
         <translation>Schovat nastavení poplatků transakce - transaction fee</translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for qtum transactions than the network can process.</source>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for LUX transactions than the network can process.</source>
         <translation>Když je zde měně transakcí než místa na bloky, mineři stejně tak relay-e mohou nasadit minimální poplatky. Zaplacením pouze minimálního poplatku je v pohodě, ale mějte na paměti že toto může mít za následek nikdy neověřenou transakci pokud zde bude více qtumových transakcí než může síť zvládnout.</translation>
     </message>
     <message>
@@ -2353,8 +2353,8 @@ Poznámka: Jelikož je poplatek počítaný za bajt, poplatek o hodnotě "100 sa
         <translation>Vytvořit bez podpisu</translation>
     </message>
     <message>
-        <source>Creates a Partially Signed Qtum Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation>Vytvořit částečně podepsanou Qtum transakci (Partially Signed Qtum Transaction - PSBT) k použtí kupříkladu s offline %1 peněženkou nebo s jinou kompatibilní PSBT hardware peněženkou.</translation>
+        <source>Creates a Partially Signed LUX Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <translation>Vytvořit částečně podepsanou LUX transakci (Partially Signed LUX Transaction - PSBT) k použtí kupříkladu s offline %1 peněženkou nebo s jinou kompatibilní PSBT hardware peněženkou.</translation>
     </message>
     <message>
         <source> from wallet '%1'</source>
@@ -2377,7 +2377,7 @@ Poznámka: Jelikož je poplatek počítaný za bajt, poplatek o hodnotě "100 sa
         <translation>Jsi si jistý, že tuhle transakci chceš poslat?</translation>
     </message>
     <message>
-        <source>Please, review your transaction proposal. This will produce a Partially Signed Qtum Transaction (PSBT) which you can copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <source>Please, review your transaction proposal. This will produce a Partially Signed LUX Transaction (PSBT) which you can copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <translation>Zkontrolujte prosím svůj návrh transakce. Výsledkem bude částečně podepsaná qtumová transakce (PSBT), kterou můžete kopírovat a poté podepsat např. pomocí offline %1 peněženky nebo hardwarové peněženky kompatibilní s PSBT.</translation>
     </message>
     <message>
@@ -2469,7 +2469,7 @@ Poznámka: Jelikož je poplatek počítaný za bajt, poplatek o hodnotě "100 sa
         <translation><numerusform>Potvrzování by podle odhadu mělo začít během %n bloku.</numerusform><numerusform>Potvrzování by podle odhadu mělo začít během %n bloků.</numerusform><numerusform>Potvrzování by podle odhadu mělo začít během %n bloků.</numerusform><numerusform>Potvrzování by podle odhadu mělo začít během %n bloků.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid Qtum address</source>
+        <source>Warning: Invalid LUX address</source>
         <translation>Upozornění: Neplatná qtumová adresa</translation>
     </message>
     <message>
@@ -2508,8 +2508,8 @@ Poznámka: Jelikož je poplatek počítaný za bajt, poplatek o hodnotě "100 sa
         <translation>Vyber již použitou adresu</translation>
     </message>
     <message>
-        <source>The Qtum address to send the payment to</source>
-        <translation>Qtumová adresa příjemce</translation>
+        <source>The LUX address to send the payment to</source>
+        <translation>LUXová adresa příjemce</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2532,7 +2532,7 @@ Poznámka: Jelikož je poplatek počítaný za bajt, poplatek o hodnotě "100 sa
         <translation>Částka k odeslání ve vybrané měně</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less qtums than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less LUX than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
         <translation>Poplatek se odečte od posílané částky. Příjemce tak dostane méně qtumů, než zadáš do pole Částka. Pokud vybereš více příjemců, tak se poplatek rovnoměrně rozloží.</translation>
     </message>
     <message>
@@ -2560,8 +2560,8 @@ Poznámka: Jelikož je poplatek počítaný za bajt, poplatek o hodnotě "100 sa
         <translation>Zadej označení této adresy; obojí se ti pak uloží do adresáře</translation>
     </message>
     <message>
-        <source>A message that was attached to the qtum: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Qtum network.</source>
-        <translation>Zpráva, která byla připojena k qtum: URI a která se ti pro přehled uloží k transakci. Poznámka: Tahle zpráva se neposílá s platbou po qtumové síti.</translation>
+        <source>A message that was attached to the LUX: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the LUX network.</source>
+        <translation>Zpráva, která byla připojena k LUX: URI a která se ti pro přehled uloží k transakci. Poznámka: Tahle zpráva se neposílá s platbou po qtumové síti.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2594,12 +2594,12 @@ Poznámka: Jelikož je poplatek počítaný za bajt, poplatek o hodnotě "100 sa
         <translation>&amp;Podepiš zprávu</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive qtums sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <source>You can sign messages/agreements with your addresses to prove you can receive LUX sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>Podepsáním zprávy/smlouvy svými adresami můžeš prokázat, že jsi na ně schopen přijmout qtumy. Buď opatrný a nepodepisuj nic vágního nebo náhodného; například při phishingových útocích můžeš být lákán, abys něco takového podepsal. Podepisuj pouze naprosto úplná a detailní prohlášení, se kterými souhlasíš.</translation>
     </message>
     <message>
-        <source>The Qtum address to sign the message with</source>
-        <translation>Qtumová adresa, kterou se zpráva podepíše</translation>
+        <source>The LUX address to sign the message with</source>
+        <translation>LUXová adresa, kterou se zpráva podepíše</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2630,7 +2630,7 @@ Poznámka: Jelikož je poplatek počítaný za bajt, poplatek o hodnotě "100 sa
         <translation>Zkopíruj tento podpis do schránky</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Qtum address</source>
+        <source>Sign the message to prove you own this LUX address</source>
         <translation>Podepiš zprávu, čímž prokážeš, že jsi vlastníkem této qtumové adresy</translation>
     </message>
     <message>
@@ -2654,8 +2654,8 @@ Poznámka: Jelikož je poplatek počítaný za bajt, poplatek o hodnotě "100 sa
         <translation>K ověření podpisu zprávy zadej adresu příjemce, zprávu (ověř si, že správně kopíruješ zalomení řádků, mezery, tabulátory apod.) a podpis. Dávej pozor na to, abys nezkopíroval do podpisu víc, než co je v samotné podepsané zprávě, abys nebyl napálen man-in-the-middle útokem. Poznamenejme však, že takto lze pouze prokázat, že podepisující je schopný na dané adrese přijmout platbu, ale není možnéprokázat, že odeslal jakoukoli transakci!</translation>
     </message>
     <message>
-        <source>The Qtum address the message was signed with</source>
-        <translation>Qtumová adresa, kterou je zpráva podepsána</translation>
+        <source>The LUX address the message was signed with</source>
+        <translation>LUXová adresa, kterou je zpráva podepsána</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -2666,7 +2666,7 @@ Poznámka: Jelikož je poplatek počítaný za bajt, poplatek o hodnotě "100 sa
         <translation>Podpis daný při podpisu zprávy</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Qtum address</source>
+        <source>Verify the message to ensure it was signed with the specified LUX address</source>
         <translation>Ověř zprávu, aby ses ujistil, že byla podepsána danou qtumovou adresou</translation>
     </message>
     <message>

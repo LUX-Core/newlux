@@ -63,7 +63,9 @@ QLabel{
 QLabel::disabled{
     color: rgba(111, 128, 171, 20%);
 }
-QLabel#labelGeneral,
+QLabel#labelTotal,
+#labelWatchTotal,
+#labelGeneral,
 #labelNetwork,
 #labelBlockChain,
 #labelMempoolTitle{
@@ -87,7 +89,7 @@ Line Edit CSS
 --------------------------------------------*/
 QLineEdit{
     border: 1px solid #49587A;
-    border-radius: 14px;
+    border-radius: 12px;
     background-color: #1a233a;
     color: #6f80ab;
     padding: 4px;
@@ -108,14 +110,17 @@ QAbstractItemView#autoCompleterPopup{
     padding: 4px;
 }
 QAbstractItemView#autoCompleterPopup::item{
+    border: none;
+    border-radius: 10px;
     background-color: #49587a;
-    color: #1A233A;
+    color: #a6c1d5;
     padding: 4px;
     padding-left: 10px;
 }
 QAbstractItemView#autoCompleterPopup::item:selected {
     background-color: #1A233A;
     color: #ffffff;
+    padding: 4px;
 }
 /*--------------------------------------------
 List Viev CSS
@@ -129,7 +134,7 @@ Combo Box CSS
 --------------------------------------------*/
 QComboBox {
     border: 1px solid #49587A;
-    border-radius: 14px;
+    border-radius: 12px;
     background-color: #1A233A;
     color: #6f80ab;
     padding: 4px;
@@ -152,21 +157,24 @@ QComboBox:down-arrow {
     top: 1px;
 }
 QComboBox QAbstractItemView::item {
+    border: none;
+    border-radius: 10px;
     background-color: #49587a;
-    color: #1A233A;
+    color: #a6c1d5;
     padding: 4px;
     padding-left: 10px;
 }
 QComboBox QAbstractItemView::item:selected {
     background-color: #1A233A;
     color: #ffffff;
+    padding: 4px;
 }
 QComboBox QAbstractItemView{
     background-color: #49587a;
     border: none;
-    border-radius: 6px;
-    padding: 6px 0px;
-    margin-top: 5px;
+    border-radius: 10px;
+    padding: 4px;
+    margin-top: 3px;
     margin-bottom: 3px;
 }
 QComboBox::disabled {
@@ -258,7 +266,7 @@ QAbstractSpinBox {
     background-position: right;
     background-repeat: no-repeat;
     border: 1px solid #49587A;
-    border-radius: 14px;
+    border-radius: 12px;
     color: #6f80ab;
     padding-left: 12px;
 }
@@ -369,8 +377,8 @@ QTextEdit QScrollBar:vertical {
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
     background: #1A233A;
-    width: 12px;
-    padding: 5px 0px 5px 2px;
+    width: 19px;
+    padding: 10px 4px;
 }
 QTextEdit QScrollBar::handle:vertical {
     border: none;
@@ -386,8 +394,8 @@ QPlainTextEdit QScrollBar:vertical {
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
     background: #1A233A;
-    width: 12px;
-    padding: 5px 0px 5px 2px;
+    width: 19px;
+    padding: 10px 4px;
 }
 QPlainTextEdit QScrollBar::handle:vertical {
     border: none;
@@ -399,12 +407,12 @@ QPlainTextEdit QScrollBar::handle:vertical:disabled {
     background: rgba(29, 40, 67, 40%);
 }
 QComboBox QScrollBar:vertical {
-    border-radius: 0px;
+    border-radius: 7px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     background: #49587a;
-    width: 10px;
-    padding: 0px 0px;
+    width: 16px;
+    padding: 5px 4px;
 }
 QComboBox QScrollBar::handle:vertical {
     border: none;
@@ -516,7 +524,7 @@ QTextEdit CSS
 --------------------------------------------*/
 QTextEdit {
     border: 1px solid #49587A;
-    border-radius: 14px;
+    border-radius: 12px;
     background-color: #1a233a;
     color: #ffffff;
     padding-left: 5px;
@@ -536,7 +544,7 @@ QPlainTextEdit CSS
 --------------------------------------------*/
 QPlainTextEdit {
     border: 1px solid #49587A;
-    border-radius: 14px;
+    border-radius: 12px;
     background-color: #1a233a;
     color: #ffffff;
     padding-left: 5px;
@@ -579,20 +587,23 @@ UnitDisplayStatusBarControl {
     padding: 0px;
 }
 UnitDisplayStatusBarControl QMenu::item {
+    border: none;
+    border-radius: 10px;
     background-color: #49587a;
-    color: #1A233A;
+    color: #a6c1d5;
     padding: 4px;
     padding-left: 10px;
 }
 UnitDisplayStatusBarControl QMenu::item:selected {
     background-color: #1A233A;
     color: #ffffff;
+    padding: 4px;
 }
 UnitDisplayStatusBarControl QMenu{
     background-color: #49587a;
     border: none;
-    border-radius: 6px;
-    padding: 10px 0px;
+    border-radius: 10px;
+    padding: 4px;
     margin: 0px;
 }
 /*--------------------------------------------
@@ -601,7 +612,7 @@ Progress Bar CSS
 QProgressBar {
     background-color: #1A233A;
     font: 10pt;
-    color: #94ccf2;
+    color: #ffffff;
     border-radius: 0px;
     text-align: center;
 }
@@ -643,7 +654,7 @@ QTabWidget::pane {
     background-color: #1d2843;
 }
 TitleBar QTabBar::tab {
-    padding: 5px 0px;
+    padding: 5px 10px;
 }
 #widgetTitle, #widgetWallet {
     background-color: #1d2843;
@@ -677,7 +688,7 @@ QMenu::item {
     border: none;
     padding: 5px 32px;
     background-color: #49587a;
-    color: #1A233A;
+    color: #a6c1d5;
 }
 QMenu::item:selected {
     background-color: #1A233A;
@@ -691,7 +702,7 @@ QMenu::icon{
     margin-left: 15px;
 }
 QMenu::item:disabled {
-   color: rgba(26, 35, 58, 30%);
+    color: rgba(26, 35, 58, 30%);
 }
 /*--------------------------------------------
 Check Box CSS
@@ -821,7 +832,7 @@ QPushButton {
     color: #4f9fdd; 
     background: transparent;
     border: 1px solid #49587a;
-    border-radius: 14px;
+    border-radius: 12px;
     min-width: 5em;
     padding: 6px;
     margin: 0px;
@@ -972,15 +983,16 @@ Watch Only Widget CSS
     padding: 4px;
 }
 #watchOnlyWidget QAbstractItemView::item, 
-#watchOnlyWidget QAbstractItemView::item:selected {
-    padding: 4px;
-    padding-left: 8px;
-    padding-right: 8px;
+#watchOnlyWidget QAbstractItemView::item:selected, 
+#watchOnlyWidget QAbstractItemView{
+    padding-left: 0px; 
+    padding: 4px; 
 } 
 #watchOnlyWidget QAbstractItemView {
     padding: 4px;
     padding-left: 0px;
     padding-right: 0px;
+    padding: 4px;
 }
 /*--------------------------------------------
 Tab Bar close button CSS
@@ -1003,6 +1015,7 @@ Stake Page Widget CSS
     border: 1px dotted #47587d;
     color: #47587d;
     border-radius: 4px;
+    margin-top: 20px;
 }
 #frameStakeInfo #labelAssets{
     color: white;
@@ -1041,6 +1054,7 @@ Overview Page Widget CSS
     background-color: #1d3456;
     image:url(":/icons/bitcoin");
     padding: 5px;
+    border: 1px solid #1a2845;
 }
 #widgetRecent #showMoreButton{
     min-width: 3em;
@@ -1054,10 +1068,15 @@ Overview Page Widget CSS
     padding: 6px;
     min-width: 8em;
     border-radius: 18px;
+    border: 1px solid #1a2845;
 }
 /*--------------------------------------------
 Token Page Widget CSS
 --------------------------------------------*/
+#labelTokenAddressText, 
+#labelTokenBalanceText{
+    color: #ffffff;
+}
 #labelTokenBalance{
     color: white;
 }
@@ -1084,7 +1103,8 @@ Token Page Widget CSS
 TokenListWidget{
     background-color: #1a2845;
 }
-TokenItemWidget #tokenName{
+TokenItemWidget #tokenName,
+#labelNewToken{
     color: #6f80ab;
     font: 13pt;
 }
@@ -1103,7 +1123,8 @@ TokenItemWidget #tokenLogo{
 DelegationListWidget{
     background-color: #1a2845;
 }
-DelegationItemWidget #labelFee{
+DelegationItemWidget #labelFee,
+#labelNewDelegation{
     color: #6f80ab;
     font: 13pt;
 }
@@ -1119,10 +1140,14 @@ DelegationItemWidget #delegationLogo{
     background-color: #334263;
     border-radius: 20px;
 }
+#coinControlContentsWidget{
+    background-color: #334263;
+}
 SuperStakerListWidget{
     background-color: #1a2845;
 }
-SuperStakerItemWidget #labelFee{
+SuperStakerItemWidget #labelFee,
+#labelNewSuperStaker{
     color: #6f80ab;
     font: 13pt;
 }

@@ -156,7 +156,7 @@
     <name>Intro</name>
     <message>
         <source>Qtum</source>
-        <translation>Qtum</translation>
+        <translation>LUX</translation>
     </message>
     </context>
 <context>
@@ -187,8 +187,8 @@
         <translation>Marii</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
-        <translation>Nyora kero ye Qtum (sekuti %1)</translation>
+        <source>Enter a LUX address (e.g. %1)</source>
+        <translation>Nyora kero ye LUX (sekuti %1)</translation>
     </message>
     <message>
         <source>%1 d</source>

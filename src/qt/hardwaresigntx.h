@@ -10,7 +10,7 @@ class WalletModel;
 class QtumHwiTool;
 
 /**
- * @brief The HardwareSignTx class Communicate with the Qtum Hardware Wallet Interface Tool
+ * @brief The HardwareSignTx class Communicate with the LUX Hardware Wallet Interface Tool
  */
 class HardwareSignTx : public QObject
 {

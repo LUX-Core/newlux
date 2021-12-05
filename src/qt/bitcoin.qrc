@@ -46,6 +46,7 @@
         <file alias="lock_open">res/icons/lock_open.png</file>
         <file alias="lock_staking">res/icons/lock_staking.png</file>
         <file alias="logo">res/icons/logo.png</file>
+        <file alias="logo_letters">res/icons/logo_letters.png</file>
         <file alias="filesave">res/icons/filesave.png</file>
         <file alias="verify">res/icons/verify.png</file>
         <file alias="warning">res/icons/warning.png</file>
@@ -224,6 +225,10 @@
         <file alias="down_arrow_unit">res/styles/theme2/app-icons/down_arrow_unit.png</file>
         <file alias="bg">res/styles/theme2/app-icons/bg.png</file>
         <file alias="splash_bg">res/styles/theme2/app-icons/splash_bg.png</file>
+        <file alias="message_critical">res/styles/theme2/app-icons/message_critical.png</file>
+        <file alias="message_info">res/styles/theme2/app-icons/message_info.png</file>
+        <file alias="message_warning">res/styles/theme2/app-icons/message_warning.png</file>
+        <file alias="message_question">res/styles/theme2/app-icons/message_question.png</file>
     </qresource>
     <qresource prefix="/styles/theme3">
         <file alias="app">res/styles/theme3/app.css</file>
@@ -238,8 +243,38 @@
         <file alias="invalid">res/styles/theme3/invalid.css</file>
     </qresource>
     <qresource prefix="/styles/theme3/app-icons">
+        <file alias="up_arrow">res/styles/theme3/app-icons/up_arrow.png</file>
+        <file alias="down_arrow">res/styles/theme3/app-icons/down_arrow.png</file>
+        <file alias="up_arrow_hover">res/styles/theme3/app-icons/up_arrow_hover.png</file>
+        <file alias="down_arrow_hover">res/styles/theme3/app-icons/down_arrow_hover.png</file>
+        <file alias="up_arrow_disabled">res/styles/theme3/app-icons/up_arrow_disabled.png</file>
+        <file alias="down_arrow_disabled">res/styles/theme3/app-icons/down_arrow_disabled.png</file>
+        <file alias="checkbox_unchecked">res/styles/theme3/app-icons/checkbox_unchecked.png</file>
+        <file alias="checkbox_unchecked_hover">res/styles/theme3/app-icons/checkbox_unchecked_hover.png</file>
+        <file alias="checkbox_unchecked_disabled">res/styles/theme3/app-icons/checkbox_unchecked_disabled.png</file>
+        <file alias="checkbox_checked">res/styles/theme3/app-icons/checkbox_checked.png</file>
+        <file alias="checkbox_checked_hover">res/styles/theme3/app-icons/checkbox_checked_hover.png</file>
+        <file alias="checkbox_checked_disabled">res/styles/theme3/app-icons/checkbox_checked_disabled.png</file>
+        <file alias="checkbox_indeterminate">res/styles/theme3/app-icons/checkbox_indeterminate.png</file>
+        <file alias="checkbox_indeterminate_hover">res/styles/theme3/app-icons/checkbox_indeterminate_hover.png</file>
+        <file alias="checkbox_indeterminate_disabled">res/styles/theme3/app-icons/checkbox_indeterminate_disabled.png</file>
+        <file alias="radiobutton_unchecked">res/styles/theme3/app-icons/radiobutton_unchecked.png</file>
+        <file alias="radiobutton_unchecked_hover">res/styles/theme3/app-icons/radiobutton_unchecked_hover.png</file>
+        <file alias="radiobutton_unchecked_disabled">res/styles/theme3/app-icons/radiobutton_unchecked_disabled.png</file>
+        <file alias="radiobutton_checked">res/styles/theme3/app-icons/radiobutton_checked.png</file>
+        <file alias="radiobutton_checked_hover">res/styles/theme3/app-icons/radiobutton_checked_hover.png</file>
+        <file alias="radiobutton_checked_disabled">res/styles/theme3/app-icons/radiobutton_checked_disabled.png</file>
+        <file alias="slider_switcher">res/styles/theme3/app-icons/slider_switcher.png</file>
+        <file alias="slider_switcher_disabled">res/styles/theme3/app-icons/slider_switcher_disabled.png</file>
+        <file alias="slider_switcher_hover">res/styles/theme3/app-icons/slider_switcher_hover.png</file>
+        <file alias="cb_up_down_arrow">res/styles/theme3/app-icons/cb_up_down_arrow.png</file>
+        <file alias="right_arrow">res/styles/theme3/app-icons/right_arrow.png</file>
         <file alias="down_arrow_unit">res/styles/theme3/app-icons/down_arrow_unit.png</file>
         <file alias="bg">res/styles/theme3/app-icons/bg.png</file>
         <file alias="splash_bg">res/styles/theme3/app-icons/splash_bg.png</file>
+        <file alias="message_critical">res/styles/theme3/app-icons/message_critical.png</file>
+        <file alias="message_info">res/styles/theme3/app-icons/message_info.png</file>
+        <file alias="message_warning">res/styles/theme3/app-icons/message_warning.png</file>
+        <file alias="message_question">res/styles/theme3/app-icons/message_question.png</file>
     </qresource>
 </RCC>

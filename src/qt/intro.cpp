@@ -364,7 +364,7 @@ void Intro::UpdatePruneLabels(bool prune_checked)
     }
     ui->lblExplanation3->setVisible(prune_checked);
     ui->sizeWarningLabel->setText(
-        tr("%1 will download and store a copy of the Qtum block chain.").arg(PACKAGE_NAME) + " " +
+        tr("%1 will download and store a copy of the LUX block chain.").arg(PACKAGE_NAME) + " " +
         storageRequiresMsg.arg(m_required_space_gb) + " " +
         tr("The wallet will also be stored in this directory.")
     );

@@ -3,7 +3,7 @@
 
 #include <QObject>
 
-#define QTUM_RELEASES "https://github.com/qtumproject/qtum/releases"
+#define QTUM_RELEASES "https://github.com/LUX-Core/newlux/releases"
 
 class Version {
 
