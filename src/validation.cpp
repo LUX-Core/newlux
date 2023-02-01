@@ -1278,12 +1278,8 @@ bool GetTransaction(const uint256& hash, CTransactionRef& txOut, const Consensus
 bool CheckHeaderPoW(const CBlockHeader& block, const Consensus::Params& consensusParams, int nHeight = 0)
 {
     // Check for proof of work block header
-    if (nHeight != 0) {
-        uint256 seed = GetRandomXSeed(nHeight);
-        return CheckProofOfWork(block.GetHash(&seed), block.nBits, consensusParams);
-    } else {
-        return CheckProofOfWork(block.GetHash(), block.nBits, consensusParams);
-    }
+    uint256 seed = GetRandomXSeed(nHeight);
+    return CheckProofOfWork(block.GetHash(&seed), block.nBits, consensusParams);
 }
 
 bool CheckHeaderPoS(const CBlockHeader& block, const Consensus::Params& consensusParams)

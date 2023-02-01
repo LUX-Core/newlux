@@ -17,6 +17,9 @@ uint256 GetRandomXSeed(const uint32_t& nHeight)
         LOCK(cs_main);
         current_key_block = ::ChainActive().Genesis()->GetBlockHash();
     }
+    if (nHeight < SeedStartingHeight) {
+        return current_key_block;
+    }
     uint32_t remainer = nHeight % SeedInterval;
 
     uint32_t first_check = nHeight - remainer;
@@ -30,7 +33,7 @@ uint256 GetRandomXSeed(const uint32_t& nHeight)
     } else {
         if (nHeight > second_check) {
             LOCK(cs_main);
-            current_key_block =  ::ChainActive()[second_check-SeedStartingHeight]->GetBlockHash();
+            current_key_block = ::ChainActive()[second_check-SeedStartingHeight]->GetBlockHash();
         }
         
     }
