@@ -199,7 +199,6 @@ BITCOIN_CORE_H = \
   rpc/server.h \
   rpc/util.h \
   rpc/contract_util.h \
-  rx2_helper.h \
   scheduler.h \
   script/descriptor.h \
   script/keyorigin.h \
@@ -333,7 +332,6 @@ libbitcoin_server_a_SOURCES = \
   rpc/net.cpp \
   rpc/rawtransaction.cpp \
   rpc/server.cpp \
-  rx2_helper.cpp \
   script/sigcache.cpp \
   shutdown.cpp \
   timedata.cpp \
@@ -428,34 +426,30 @@ crypto_libbitcoin_crypto_base_a_SOURCES = \
   crypto/sha512.h \
   crypto/siphash.cpp \
   crypto/siphash.h \
-  crypto/RandomX/aes_hash.cpp \
-  crypto/RandomX/argon2_ref.c \
-  crypto/RandomX/argon2_ssse3.c \
-  crypto/RandomX/argon2_avx2.c \
-  crypto/RandomX/bytecode_machine.cpp \
-  crypto/RandomX/cpu.cpp \
-  crypto/RandomX/dataset.cpp \
-  crypto/RandomX/soft_aes.cpp \
-  crypto/RandomX/virtual_memory.cpp \
-  crypto/RandomX/vm_interpreted.cpp \
-  crypto/RandomX/allocator.cpp \
-  crypto/RandomX/assembly_generator_x86.cpp \
-  crypto/RandomX/instruction.cpp \
-  crypto/RandomX/randomx.cpp \
-  crypto/RandomX/superscalar.cpp \
-  crypto/RandomX/vm_compiled.cpp \
-  crypto/RandomX/vm_interpreted_light.cpp \
-  crypto/RandomX/argon2_core.c \
-  crypto/RandomX/blake2_generator.cpp \
-  crypto/RandomX/instructions_portable.cpp \
-  crypto/RandomX/reciprocal.c \
-  crypto/RandomX/virtual_machine.cpp \
-  crypto/RandomX/vm_compiled_light.cpp \
-  crypto/RandomX/blake2/blake2b.c \
-  crypto/RandomX/jit_compiler_x86.cpp \
-  crypto/RandomX/jit_compiler_x86_static.S \
-  crypto/rx2.h \
-  crypto/rx2.cpp \
+  crypto/ethash/include/ethash/ethash.h \
+  crypto/ethash/include/ethash/ethash.hpp \
+  crypto/ethash/include/ethash/hash_types.h \
+  crypto/ethash/include/ethash/hash_types.hpp \
+  crypto/ethash/include/ethash/keccak.h \
+  crypto/ethash/include/ethash/keccak.hpp \
+  crypto/ethash/include/ethash/progpow.hpp \
+  crypto/ethash/include/ethash/version.h \
+  crypto/ethash/lib/ethash/bit_manipulation.h \
+  crypto/ethash/lib/ethash/builtins.h \
+  crypto/ethash/lib/ethash/endianness.hpp \
+  crypto/ethash/lib/ethash/ethash.cpp \
+  crypto/ethash/lib/ethash/ethash-internal.hpp \
+  crypto/ethash/lib/ethash/kiss99.hpp \
+  crypto/ethash/lib/ethash/managed.cpp \
+  crypto/ethash/lib/ethash/primes.c \
+  crypto/ethash/lib/ethash/primes.h \
+  crypto/ethash/lib/ethash/progpow.cpp \
+  crypto/ethash/lib/keccak/keccak.c \
+  crypto/ethash/lib/keccak/keccakf1600.c \
+  crypto/ethash/lib/keccak/keccakf800.c \
+  crypto/ethash/lib/support/attributes.h \
+  crypto/ethash/helpers.hpp \
+  crypto/ethash/progpow_test_vectors.hpp \
   cpp-ethereum/utils/libscrypt/b64.c \
   cpp-ethereum/utils/libscrypt/b64.h \
   cpp-ethereum/utils/libscrypt/crypto-mcf.c \

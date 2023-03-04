@@ -181,7 +181,11 @@ public:
     uint256 hashMerkleRoot{};
     uint32_t nTime{0};
     uint32_t nBits{0};
-    uint32_t nNonce{0};
+    
+    //! KawPoW
+    uint64_t nNonce64{0};
+    uint256 mix_hash{};
+
     uint256 hashStateRoot{}; // lux
     uint256 hashUTXORoot{}; // lux
     // block signature - proof-of-stake protect the block by signing the block using a stake holder private key
@@ -207,7 +211,8 @@ public:
           hashMerkleRoot{block.hashMerkleRoot},
           nTime{block.nTime},
           nBits{block.nBits},
-          nNonce{block.nNonce},
+          nNonce64{block.nNonce64},
+          mix_hash{block.mix_hash},
           hashStateRoot{block.hashStateRoot},
           hashUTXORoot{block.hashUTXORoot},
           vchBlockSigDlgt{block.vchBlockSigDlgt},
@@ -242,7 +247,8 @@ public:
         block.hashMerkleRoot = hashMerkleRoot;
         block.nTime          = nTime;
         block.nBits          = nBits;
-        block.nNonce         = nNonce;
+        block.nNonce64       = nNonce64;
+        block.mix_hash       = mix_hash;
         block.hashStateRoot  = hashStateRoot; // lux
         block.hashUTXORoot   = hashUTXORoot; // lux
         block.vchBlockSigDlgt    = vchBlockSigDlgt;
@@ -385,7 +391,9 @@ public:
         READWRITE(obj.hashMerkleRoot);
         READWRITE(obj.nTime);
         READWRITE(obj.nBits);
-        READWRITE(obj.nNonce);
+        READWRITE(obj.nHeight);
+        READWRITE(obj.nNonce64);
+        READWRITE(obj.mix_hash);
         READWRITE(obj.hashStateRoot); // lux
         READWRITE(obj.hashUTXORoot); // lux
         READWRITE(obj.nStakeModifier);
@@ -402,7 +410,9 @@ public:
         block.hashMerkleRoot  = hashMerkleRoot;
         block.nTime           = nTime;
         block.nBits           = nBits;
-        block.nNonce          = nNonce;
+        block.nHeight         = nHeight;
+        block.nNonce64        = nNonce64;
+        block.mix_hash        = mix_hash;
         block.hashStateRoot   = hashStateRoot; // lux
         block.hashUTXORoot    = hashUTXORoot; // lux
         block.vchBlockSigDlgt     = vchBlockSigDlgt;

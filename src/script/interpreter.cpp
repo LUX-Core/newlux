@@ -1365,60 +1365,6 @@ template PrecomputedTransactionData::PrecomputedTransactionData(const CTransacti
 template PrecomputedTransactionData::PrecomputedTransactionData(const CMutableTransaction& txTo);
 
 template <class T>
-uint256 SignatureHashOutput(const CScript& scriptCode, const T& txTo, unsigned int nOut, int nHashType, const CAmount& amount, SigVersion sigversion, const PrecomputedTransactionData* cache)
-{
-    assert(nOut < txTo.vout.size());
-
-    uint256 hashPrevouts;
-    uint256 hashSequence;
-    uint256 hashOutputs;
-    const bool cacheready = cache && cache->ready;
-
-    if (nHashType & SIGHASH_ANYONECANPAY) {
-        assert(0 < txTo.vin.size());
-        hashPrevouts = GetFirstPrevoutHash(txTo);
-        hashSequence = GetFirstSequenceHash(txTo);
-    }
-
-    if (!(nHashType & SIGHASH_ANYONECANPAY)) {
-        hashPrevouts = cacheready ? cache->hashPrevouts : GetPrevoutHash(txTo);
-    }
-
-    if (!(nHashType & SIGHASH_ANYONECANPAY) && (nHashType & 0x1f) != SIGHASH_SINGLE && (nHashType & 0x1f) != SIGHASH_NONE) {
-        hashSequence = cacheready ? cache->hashSequence : GetSequenceHash(txTo);
-    }
-
-
-    if ((nHashType & 0x1f) != SIGHASH_SINGLE && (nHashType & 0x1f) != SIGHASH_NONE) {
-        hashOutputs = cacheready ? cache->hashOutputsOpSender : GetOutputsOpSenderHash(txTo);
-    } else if ((nHashType & 0x1f) == SIGHASH_SINGLE && nOut < txTo.vout.size()) {
-        CHashWriter ss(SER_GETHASH, 0);
-        ss << GetOutputWithoutSenderSig(txTo.vout[nOut]);
-        hashOutputs = ss.GetHash();
-    }
-
-    CHashWriter ss(SER_GETHASH, 0);
-
-    // Version
-    ss << txTo.nVersion;
-    // Input prevouts/nSequence (none/first/all, depending on flags)
-    ss << hashPrevouts;
-    ss << hashSequence;
-    // The output being signed
-    ss << GetOutputWithoutSenderSig(txTo.vout[nOut]);
-    ss << scriptCode;
-    ss << amount;
-    // Outputs (none/one/all, depending on flags)
-    ss << hashOutputs;
-    // Locktime
-    ss << txTo.nLockTime;
-    // Sighash type
-    ss << nHashType;
-
-    return ss.GetHash();
-}
-
-template <class T>
 uint256 SignatureHash(const CScript& scriptCode, const T& txTo, unsigned int nIn, int nHashType, const CAmount& amount, SigVersion sigversion, const PrecomputedTransactionData* cache)
 {
     assert(nIn < txTo.vin.size());
@@ -1483,6 +1429,60 @@ uint256 SignatureHash(const CScript& scriptCode, const T& txTo, unsigned int nIn
     // Serialize and hash
     CHashWriter ss(SER_GETHASH, 0);
     ss << txTmp << nHashType;
+    return ss.GetHash();
+}
+
+template <class T>
+uint256 SignatureHashOutput(const CScript& scriptCode, const T& txTo, unsigned int nOut, int nHashType, const CAmount& amount, SigVersion sigversion, const PrecomputedTransactionData* cache)
+{
+    assert(nOut < txTo.vout.size());
+
+    uint256 hashPrevouts;
+    uint256 hashSequence;
+    uint256 hashOutputs;
+    const bool cacheready = cache && cache->ready;
+
+    if (nHashType & SIGHASH_ANYONECANPAY) {
+        assert(0 < txTo.vin.size());
+        hashPrevouts = GetFirstPrevoutHash(txTo);
+        hashSequence = GetFirstSequenceHash(txTo);
+    }
+
+    if (!(nHashType & SIGHASH_ANYONECANPAY)) {
+        hashPrevouts = cacheready ? cache->hashPrevouts : GetPrevoutHash(txTo);
+    }
+
+    if (!(nHashType & SIGHASH_ANYONECANPAY) && (nHashType & 0x1f) != SIGHASH_SINGLE && (nHashType & 0x1f) != SIGHASH_NONE) {
+        hashSequence = cacheready ? cache->hashSequence : GetSequenceHash(txTo);
+    }
+
+
+    if ((nHashType & 0x1f) != SIGHASH_SINGLE && (nHashType & 0x1f) != SIGHASH_NONE) {
+        hashOutputs = cacheready ? cache->hashOutputsOpSender : GetOutputsOpSenderHash(txTo);
+    } else if ((nHashType & 0x1f) == SIGHASH_SINGLE && nOut < txTo.vout.size()) {
+        CHashWriter ss(SER_GETHASH, 0);
+        ss << GetOutputWithoutSenderSig(txTo.vout[nOut]);
+        hashOutputs = ss.GetHash();
+    }
+
+    CHashWriter ss(SER_GETHASH, 0);
+
+    // Version
+    ss << txTo.nVersion;
+    // Input prevouts/nSequence (none/first/all, depending on flags)
+    ss << hashPrevouts;
+    ss << hashSequence;
+    // The output being signed
+    ss << GetOutputWithoutSenderSig(txTo.vout[nOut]);
+    ss << scriptCode;
+    ss << amount;
+    // Outputs (none/one/all, depending on flags)
+    ss << hashOutputs;
+    // Locktime
+    ss << txTo.nLockTime;
+    // Sighash type
+    ss << nHashType;
+
     return ss.GetHash();
 }
 

@@ -41,7 +41,7 @@ bool MutableTransactionSignatureOutputCreator::CreateSig(const SigningProvider& 
     if (!provider.GetKey(address, key))
         return false;
 
-    uint256 hash = SignatureHashOutput(scriptCode, *txTo, nOut, nHashType, amount, sigversion);
+    uint256 hash = SignatureHash(scriptCode, *txTo, nOut, nHashType, amount, sigversion);
     if (!key.Sign(hash, vchSig))
         return false;
     vchSig.push_back((unsigned char)nHashType);

@@ -26,7 +26,9 @@ public:
     uint256 hashMerkleRoot;
     uint32_t nTime;
     uint32_t nBits;
-    uint32_t nNonce;
+    uint32_t nHeight;
+    uint64_t nNonce64;
+    uint256 mix_hash;
     uint256 hashStateRoot; // lux
     uint256 hashUTXORoot; // lux
     // proof-of-stake specific fields
@@ -46,7 +48,9 @@ public:
         READWRITE(hashMerkleRoot);
         READWRITE(nTime);
         READWRITE(nBits);
-        READWRITE(nNonce);
+        READWRITE(nHeight);
+        READWRITE(nNonce64);
+        READWRITE(mix_hash);
         READWRITE(hashStateRoot); // lux
         READWRITE(hashUTXORoot); // lux
         READWRITE(prevoutStake);
@@ -60,7 +64,9 @@ public:
         hashMerkleRoot.SetNull();
         nTime = 0;
         nBits = 0;
-        nNonce = 0;
+        nHeight = 0;
+        nNonce64 = 0;
+        mix_hash.SetNull();
         hashStateRoot.SetNull(); // lux
         hashUTXORoot.SetNull(); // lux
         vchBlockSigDlgt.clear();
@@ -72,11 +78,14 @@ public:
         return (nBits == 0);
     }
 
-    uint256 GetHash(uint256* seedptr = nullptr, bool fMiner = false) const;
+    uint256 GetHash() const;
 
-    uint256 GetHashWithoutSign(uint256* seedptr = nullptr, bool fMiner = false) const;
+    uint256 GetHashWithoutSign() const;
 
     std::string GetWithoutSign() const;
+
+    uint256 GetValidationHash(uint256& mix_hash) const;
+    uint256 GetKAWPOWHeaderHash() const;
 
     int64_t GetBlockTime() const
     {
@@ -121,7 +130,9 @@ public:
             this->hashMerkleRoot = other.hashMerkleRoot;
             this->nTime          = other.nTime;
             this->nBits          = other.nBits;
-            this->nNonce         = other.nNonce;
+            this->nHeight        = other.nHeight;
+            this->nNonce64       = other.nNonce64;
+            this->mix_hash       = other.mix_hash;
             this->hashStateRoot  = other.hashStateRoot;
             this->hashUTXORoot   = other.hashUTXORoot;
             this->vchBlockSigDlgt    = other.vchBlockSigDlgt;
@@ -180,7 +191,9 @@ public:
         block.hashMerkleRoot = hashMerkleRoot;
         block.nTime          = nTime;
         block.nBits          = nBits;
-        block.nNonce         = nNonce;
+        block.nHeight        = nHeight;
+        block.nNonce64       = nNonce64;
+        block.mix_hash       = mix_hash;
         block.hashStateRoot  = hashStateRoot; // lux
         block.hashUTXORoot   = hashUTXORoot; // lux
         block.vchBlockSigDlgt    = vchBlockSigDlgt;
@@ -221,6 +234,24 @@ struct CBlockLocator
     bool IsNull() const
     {
         return vHave.empty();
+    }
+};
+
+/**
+ * Custom serializer for CBlockHeader that omits the nNonce and mixHash, for use
+ * as input to ProgPow.
+ */
+class CKAWPOWInput : private CBlockHeader
+{
+public:
+    CKAWPOWInput(const CBlockHeader &header)
+    {
+        CBlockHeader::SetNull();
+        *((CBlockHeader*)this) = header;
+    }
+
+    SERIALIZE_METHODS(CKAWPOWInput, obj) { 
+        READWRITE(obj.nVersion, obj.hashPrevBlock, obj.hashMerkleRoot, obj.nTime, obj.nBits, obj.nHeight);
     }
 };
 

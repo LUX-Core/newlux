@@ -30,7 +30,6 @@
 #include <primitives/transaction.h>
 #include <random.h>
 #include <reverse_iterator.h>
-#include <rx2_helper.h>
 #include <script/script.h>
 #include <script/sigcache.h>
 #include <shutdown.h>
@@ -1278,8 +1277,13 @@ bool GetTransaction(const uint256& hash, CTransactionRef& txOut, const Consensus
 bool CheckHeaderPoW(const CBlockHeader& block, const Consensus::Params& consensusParams, int nHeight = 0)
 {
     // Check for proof of work block header
-    uint256 seed = GetRandomXSeed(nHeight);
-    return CheckProofOfWork(block.GetHash(&seed), block.nBits, consensusParams);
+    uint256 mix_hash;
+    if (!CheckProofOfWork(block.GetValidationHash(mix_hash), block.nBits, consensusParams)) {
+        return false;
+    }
+    if (mix_hash != block.mix_hash) {
+        return false;
+    }
 }
 
 bool CheckHeaderPoS(const CBlockHeader& block, const Consensus::Params& consensusParams)

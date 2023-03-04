@@ -29,7 +29,8 @@ public:
         hashMerkleRoot = header.hashMerkleRoot;
         nTime = header.nTime;
         nBits = header.nBits;
-        nNonce = header.nNonce;
+        nNonce64 = header.nNonce64;
+        mix_hash = header.mix_hash;
         hashStateRoot = header.hashStateRoot;
         hashUTXORoot = header.hashUTXORoot;
         prevoutStake = header.prevoutStake;
@@ -45,7 +46,9 @@ public:
         READWRITE(hashMerkleRoot);
         READWRITE(nTime);
         READWRITE(nBits);
-        READWRITE(nNonce);
+        READWRITE(nHeight);
+        READWRITE(nNonce64);
+        READWRITE(mix_hash);
         READWRITE(hashStateRoot);
         READWRITE(hashUTXORoot);
         READWRITE(prevoutStake);
@@ -64,46 +67,23 @@ private:
     uint256 hashMerkleRoot;
     uint32_t nTime;
     uint32_t nBits;
-    uint32_t nNonce;
+    uint32_t nHeight;
+    uint32_t nNonce64;
+    uint256 mix_hash;
     uint256 hashStateRoot;
     uint256 hashUTXORoot;
     COutPoint prevoutStake;
     std::vector<unsigned char> vchBlockDlgt;
 };
 
-uint256 CBlockHeader::GetHash(uint256 *seedptr, bool fMiner) const
+uint256 CBlockHeader::GetHash() const
 {
-    uint256 thash;
-    if (seedptr) {
-        if (fMiner) {    
-            rx_slow_hash((char*)this,(char*)&thash, 144, *seedptr);
-            return thash;
-        } else {
-            rx_slow_hash2((char*)this,(char*)&thash, 144, *seedptr);
-            return thash;
-        }
-    } else {
-        return SerializeHash(*this);
-    }
+    return SerializeHash(*this);
 }
 
-uint256 CBlockHeader::GetHashWithoutSign(uint256 *seedptr, bool fMiner) const
+uint256 CBlockHeader::GetHashWithoutSign() const
 {
-    uint256 thash;
-    CBlockHeaderSign *ptrBlock;
-    CBlockHeaderSign block = CBlockHeaderSign(*this);
-    ptrBlock = &block;
-    if (seedptr) {
-        if (fMiner) {    
-            rx_slow_hash((char*)ptrBlock, (char*)&thash, 144, *seedptr);
-            return thash;
-        } else {
-            rx_slow_hash2((char*)ptrBlock, (char*)&thash, 144, *seedptr);
-            return thash;
-        }
-    } else {
-        return SerializeHash(CBlockHeader(*this), SER_GETHASH);
-    }
+    return SerializeHash(CBlockHeader(*this), SER_GETHASH);
 }
 
 std::string CBlockHeader::GetWithoutSign() const
@@ -116,12 +96,13 @@ std::string CBlockHeader::GetWithoutSign() const
 std::string CBlock::ToString() const
 {
     std::stringstream s;
-    s << strprintf("CBlock(hash=%s, ver=0x%08x, hashPrevBlock=%s, hashMerkleRoot=%s, nTime=%u, nBits=%08x, nNonce=%u, hashStateRoot=%s, hashUTXORoot=%s, blockSig=%s, proof=%s, prevoutStake=%s, vtx=%u)\n",
+    s << strprintf("CBlock(hash=%s, ver=0x%08x, hashPrevBlock=%s, hashMerkleRoot=%s, nTime=%u, nBits=%08x, nHeight=%u, nNonce64=%u, mix_hash=%s, hashStateRoot=%s, hashUTXORoot=%s, blockSig=%s, proof=%s, prevoutStake=%s, vtx=%u)\n",
         GetHash().ToString(),
         nVersion,
         hashPrevBlock.ToString(),
         hashMerkleRoot.ToString(),
-        nTime, nBits, nNonce,
+        nTime, nBits, nHeight ,nNonce64,
+        mix_hash.ToString(),
         hashStateRoot.ToString(), // lux
         hashUTXORoot.ToString(), // lux
         HexStr(vchBlockSigDlgt),
@@ -183,4 +164,21 @@ void CBlockHeader::SetProofOfDelegation(const std::vector<unsigned char> &vchPoD
     }
     vchBlockSigDlgt = vchSign;
     vchBlockSigDlgt.insert(vchBlockSigDlgt.end(), vchPoD.begin(), vchPoD.end());
+}
+
+uint256 CBlockHeader::GetValidationHash(uint256& mix_hash) const
+{
+    return KAWPOWHash(*this, mix_hash);
+}
+
+/**
+ * @brief This takes a block header, removes the nNonce64 and the mixHash. Then performs a serialized hash of it SHA256D.
+ * This will be used as the input to the KAAAWWWPOW hashing function
+ * @note Only to be called and used on KAAAWWWPOW block headers
+ */
+uint256 CBlockHeader::GetKAWPOWHeaderHash() const
+{
+    CKAWPOWInput input{*this};
+
+    return SerializeHash(input);
 }
