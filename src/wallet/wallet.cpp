@@ -3588,7 +3588,7 @@ bool CWallet::CreateCoinStakeFromMine(interfaces::Chain::Lock& locked_chain, con
     int64_t nRewardPiece = 0;
     // Calculate reward
     {
-        int64_t nReward = nTotalFees + GetBlockSubsidy(pindexPrev->nHeight + 1, consensusParams);
+        int64_t nReward = nTotalFees + GetBlockSubsidy(pindexPrev->nHeight + 1, consensusParams, true);
         if (nReward < 0)
             return false;
 
@@ -3796,7 +3796,7 @@ bool CWallet::CreateCoinStakeFromDelegate(interfaces::Chain::Lock& locked_chain,
     int64_t nRewardOffline = 0;
     // Calculate reward
     {
-        int64_t nTotalReward = nTotalFees + GetBlockSubsidy(pindexPrev->nHeight + 1, consensusParams);
+        int64_t nTotalReward = nTotalFees + GetBlockSubsidy(pindexPrev->nHeight + 1, consensusParams, true);
         if (nTotalReward < 0)
             return false;
 

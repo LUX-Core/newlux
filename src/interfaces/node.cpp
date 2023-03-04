@@ -318,7 +318,7 @@ public:
     int64_t getBlockSubsidy(int nHeight) override
     {
         const CChainParams& chainparams = Params();
-        return GetBlockSubsidy(nHeight, chainparams.GetConsensus());
+        return GetBlockSubsidy(nHeight, chainparams.GetConsensus(), true);
     }
     uint64_t getNetworkStakeWeight() override
     {

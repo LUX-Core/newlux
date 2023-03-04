@@ -1432,29 +1432,574 @@ bool ReadRawBlockFromDisk(std::vector<uint8_t>& block, const CBlockIndex* pindex
     return ReadRawBlockFromDisk(block, block_pos, message_start);
 }
 
-CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
+CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams, bool fProofOfStake)
 {
 
-    /*
-    int subsidyHalvingInterval = consensusParams.SubsidyHalvingInterval(nHeight);
-    int subsidyHalvingWeight = consensusParams.SubsidyHalvingWeight(nHeight);
-    int halvings = (subsidyHalvingWeight - 1) / subsidyHalvingInterval;
-    // Force block reward to zero when right shift is undefined.
-    if (halvings >= 7)
-        return 0;
-
-    int blocktimeDownscaleFactor = consensusParams.BlocktimeDownscaleFactor(nHeight);
-    CAmount nSubsidy = 4 * COIN / blocktimeDownscaleFactor;
-    // Subsidy is cut in half every 985500 blocks which will occur approximately every 4 years.
-    nSubsidy >>= halvings;
-    return nSubsidy;
-    */
-    // Disable subsidy halving
-    CAmount nSubsidy = 1 * COIN;
+    CAmount nSubsidy = 1;
+    int nBlocksPerDay = 1440;
+    int nMonth = 30;
     if (nHeight == 2) {
-        nSubsidy = 13000000 * COIN;
+        nSubsidy = 14000000;
     }
-    return nSubsidy;
+    if (nHeight > 2) {
+        if (nHeight <= (nBlocksPerDay * 1 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 10;
+            } else {
+                nSubsidy = 4;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 1 * nMonth) && nHeight <= (nBlocksPerDay * 2 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 9;
+            } else {
+                nSubsidy = 3.6;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 2 * nMonth) && nHeight <= (nBlocksPerDay * 3 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 8.1;
+            } else {
+                nSubsidy = 3.24;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 3 * nMonth) && nHeight <= (nBlocksPerDay * 4 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 7.29;
+            } else {
+                nSubsidy = 2.92;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 4 * nMonth) && nHeight <= (nBlocksPerDay * 5 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 6.56;
+            } else {
+                nSubsidy = 2.63;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 5 * nMonth) && nHeight <= (nBlocksPerDay * 6 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 5.9;
+            } else {
+                nSubsidy = 2.37;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 6 * nMonth) && nHeight <= (nBlocksPerDay * 7 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 5.31;
+            } else {
+                nSubsidy = 2.13;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 7 * nMonth) && nHeight <= (nBlocksPerDay * 8 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 4.78;
+            } else {
+                nSubsidy = 1.92;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 8 * nMonth) && nHeight <= (nBlocksPerDay * 9 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 4.3;
+            } else {
+                nSubsidy = 1.73;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 9 * nMonth) && nHeight <= (nBlocksPerDay * 10 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 3.87;
+            } else {
+                nSubsidy = 1.56;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 10 * nMonth) && nHeight <= (nBlocksPerDay * 11 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 3.48;
+            } else {
+                nSubsidy = 1.4;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 11 * nMonth) && nHeight <= (nBlocksPerDay * 12 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 3.13;
+            } else {
+                nSubsidy = 1.26;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 12 * nMonth) && nHeight <= (nBlocksPerDay * 13 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 2.97;
+            } else {
+                nSubsidy = 1.2;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 13 * nMonth) && nHeight <= (nBlocksPerDay * 14 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 2.82;
+            } else {
+                nSubsidy = 1.14;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 14 * nMonth) && nHeight <= (nBlocksPerDay * 15 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 2.68;
+            } else {
+                nSubsidy = 1.08;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 15 * nMonth) && nHeight <= (nBlocksPerDay * 16 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 2.55;
+            } else {
+                nSubsidy = 1.03;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 16 * nMonth) && nHeight <= (nBlocksPerDay * 17 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 2.42;
+            } else {
+                nSubsidy = 0.98;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 17 * nMonth) && nHeight <= (nBlocksPerDay * 18 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 2.3;
+            } else {
+                nSubsidy = 0.93;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 18 * nMonth) && nHeight <= (nBlocksPerDay * 19 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 2.19;
+            } else {
+                nSubsidy = 0.88;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 19 * nMonth) && nHeight <= (nBlocksPerDay * 20 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 2.19;
+            } else {
+                nSubsidy = 0.88;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 20 * nMonth) && nHeight <= (nBlocksPerDay * 21 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 2.08;
+            } else {
+                nSubsidy = 0.84;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 21 * nMonth) && nHeight <= (nBlocksPerDay * 22 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 1.98;
+            } else {
+                nSubsidy = 0.8;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 22 * nMonth) && nHeight <= (nBlocksPerDay * 23 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 1.88;
+            } else {
+                nSubsidy = 0.76;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 23 * nMonth) && nHeight <= (nBlocksPerDay * 24 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 1.79;
+            } else {
+                nSubsidy = 0.72;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 24 * nMonth) && nHeight <= (nBlocksPerDay * 25 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 1.7;
+            } else {
+                nSubsidy = 0.72;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 25 * nMonth) && nHeight <= (nBlocksPerDay * 26 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 1.63;
+            } else {
+                nSubsidy = 0.69;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 26 * nMonth) && nHeight <= (nBlocksPerDay * 27 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 1.56;
+            } else {
+                nSubsidy = 0.66;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 27 * nMonth) && nHeight <= (nBlocksPerDay * 28 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 1.5;
+            } else {
+                nSubsidy = 0.63;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 28 * nMonth) && nHeight <= (nBlocksPerDay * 29 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 1.44;
+            } else {
+                nSubsidy = 0.6;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 29 * nMonth) && nHeight <= (nBlocksPerDay * 30 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 1.38;
+            } else {
+                nSubsidy = 0.58;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 30 * nMonth) && nHeight <= (nBlocksPerDay * 31 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 1.32;
+            } else {
+                nSubsidy = 0.56;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 31 * nMonth) && nHeight <= (nBlocksPerDay * 32 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 1.27;
+            } else {
+                nSubsidy = 0.54;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 32 * nMonth) && nHeight <= (nBlocksPerDay * 33 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 1.22;
+            } else {
+                nSubsidy = 0.52;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 33 * nMonth) && nHeight <= (nBlocksPerDay * 34 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 1.17;
+            } else {
+                nSubsidy = 0.5;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 34 * nMonth) && nHeight <= (nBlocksPerDay * 35 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 1.12;
+            } else {
+                nSubsidy = 0.48;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 35 * nMonth) && nHeight <= (nBlocksPerDay * 36 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 1.08;
+            } else {
+                nSubsidy = 0.46;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 36 * nMonth) && nHeight <= (nBlocksPerDay * 37 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 1.04;
+            } else {
+                nSubsidy = 0.44;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 37 * nMonth) && nHeight <= (nBlocksPerDay * 38 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 1.01;
+            } else {
+                nSubsidy = 0.43;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 38 * nMonth) && nHeight <= (nBlocksPerDay * 39 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.98;
+            } else {
+                nSubsidy = 0.42;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 39 * nMonth) && nHeight <= (nBlocksPerDay * 40 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.95;
+            } else {
+                nSubsidy = 0.41;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 40 * nMonth) && nHeight <= (nBlocksPerDay * 41 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.92;
+            } else {
+                nSubsidy = 0.4;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 41 * nMonth) && nHeight <= (nBlocksPerDay * 42 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.89;
+            } else {
+                nSubsidy = 0.39;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 42 * nMonth) && nHeight <= (nBlocksPerDay * 43 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.86;
+            } else {
+                nSubsidy = 0.38;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 43 * nMonth) && nHeight <= (nBlocksPerDay * 44 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.83;
+            } else {
+                nSubsidy = 0.37;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 44 * nMonth) && nHeight <= (nBlocksPerDay * 45 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.81;
+            } else {
+                nSubsidy = 0.36;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 45 * nMonth) && nHeight <= (nBlocksPerDay * 46 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.79;
+            } else {
+                nSubsidy = 0.35;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 46 * nMonth) && nHeight <= (nBlocksPerDay * 47 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.77;
+            } else {
+                nSubsidy = 0.34;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 47 * nMonth) && nHeight <= (nBlocksPerDay * 48 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.75;
+            } else {
+                nSubsidy = 0.33;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 48 * nMonth) && nHeight <= (nBlocksPerDay * 49 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.73;
+            } else {
+                nSubsidy = 0.32;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 49 * nMonth) && nHeight <= (nBlocksPerDay * 50 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.71;
+            } else {
+                nSubsidy = 0.31;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 50 * nMonth) && nHeight <= (nBlocksPerDay * 51 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.69;
+            } else {
+                nSubsidy = 0.3;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 51 * nMonth) && nHeight <= (nBlocksPerDay * 52 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.67;
+            } else {
+                nSubsidy = 0.29;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 52 * nMonth) && nHeight <= (nBlocksPerDay * 53 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.65;
+            } else {
+                nSubsidy = 0.28;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 53 * nMonth) && nHeight <= (nBlocksPerDay * 54 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.63;
+            } else {
+                nSubsidy = 0.27;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 54 * nMonth) && nHeight <= (nBlocksPerDay * 55 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.61;
+            } else {
+                nSubsidy = 0.26;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 55 * nMonth) && nHeight <= (nBlocksPerDay * 56 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.59;
+            } else {
+                nSubsidy = 0.25;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 56 * nMonth) && nHeight <= (nBlocksPerDay * 57 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.57;
+            } else {
+                nSubsidy = 0.24;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 57 * nMonth) && nHeight <= (nBlocksPerDay * 58 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.55;
+            } else {
+                nSubsidy = 0.23;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 58 * nMonth) && nHeight <= (nBlocksPerDay * 59 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.53;
+            } else {
+                nSubsidy = 0.22;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 59 * nMonth) && nHeight <= (nBlocksPerDay * 60 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.51;
+            } else {
+                nSubsidy = 0.21;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 60 * nMonth) && nHeight <= (nBlocksPerDay * 61 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.49;
+            } else {
+                nSubsidy = 0.2;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 61 * nMonth) && nHeight <= (nBlocksPerDay * 62 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.48;
+            } else {
+                nSubsidy = 0.19;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 62 * nMonth) && nHeight <= (nBlocksPerDay * 63 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.47;
+            } else {
+                nSubsidy = 0.18;
+            }
+        }
+        if (nHeight > (nBlocksPerDay * 63 * nMonth) && nHeight <= (nBlocksPerDay * 64 * nMonth)) {
+            if (fProofOfStake) {
+                nSubsidy = 0.46;
+            } else {
+                nSubsidy = 0.17;
+            }
+        }
+
+        // after month 64 PoW is constant till month 241
+
+        if (!fProofOfStake) {
+            if (nHeight > (nBlocksPerDay * 64 * nMonth) && nHeight <= (nBlocksPerDay * 241 * nMonth)) {
+                nSubsidy = 0.16;
+            }
+        } else {
+            if (nHeight > (nBlocksPerDay * 64 * nMonth) && nHeight <= (nBlocksPerDay * 65 * nMonth)) {
+                nSubsidy = 0.45;
+            }
+            if (nHeight > (nBlocksPerDay * 65 * nMonth) && nHeight <= (nBlocksPerDay * 66 * nMonth)) {
+                nSubsidy = 0.44;
+            }
+            if (nHeight > (nBlocksPerDay * 66 * nMonth) && nHeight <= (nBlocksPerDay * 67 * nMonth)) {
+                nSubsidy = 0.43;
+            }
+            if (nHeight > (nBlocksPerDay * 67 * nMonth) && nHeight <= (nBlocksPerDay * 68 * nMonth)) {
+                nSubsidy = 0.42;
+            }
+            if (nHeight > (nBlocksPerDay * 68 * nMonth) && nHeight <= (nBlocksPerDay * 69 * nMonth)) {
+                nSubsidy = 0.41;
+            }
+            if (nHeight > (nBlocksPerDay * 69 * nMonth) && nHeight <= (nBlocksPerDay * 70 * nMonth)) {
+                nSubsidy = 0.40;
+            }
+            if (nHeight > (nBlocksPerDay * 70 * nMonth) && nHeight <= (nBlocksPerDay * 71 * nMonth)) {
+                nSubsidy = 0.39;
+            }
+            if (nHeight > (nBlocksPerDay * 71 * nMonth) && nHeight <= (nBlocksPerDay * 72 * nMonth)) {
+                nSubsidy = 0.38;
+            }
+            if (nHeight > (nBlocksPerDay * 72 * nMonth) && nHeight <= (nBlocksPerDay * 73 * nMonth)) {
+                nSubsidy = 0.37;
+            }
+            if (nHeight > (nBlocksPerDay * 73 * nMonth) && nHeight <= (nBlocksPerDay * 74 * nMonth)) {
+                nSubsidy = 0.36;
+            }
+            if (nHeight > (nBlocksPerDay * 74 * nMonth) && nHeight <= (nBlocksPerDay * 75 * nMonth)) {
+                nSubsidy = 0.35;
+            }
+            if (nHeight > (nBlocksPerDay * 75 * nMonth) && nHeight <= (nBlocksPerDay * 76 * nMonth)) {
+                nSubsidy = 0.34;
+            }
+            if (nHeight > (nBlocksPerDay * 76 * nMonth) && nHeight <= (nBlocksPerDay * 77 * nMonth)) {
+                nSubsidy = 0.33;
+            }
+            if (nHeight > (nBlocksPerDay * 77 * nMonth) && nHeight <= (nBlocksPerDay * 78 * nMonth)) {
+                nSubsidy = 0.32;
+            }
+            if (nHeight > (nBlocksPerDay * 78 * nMonth) && nHeight <= (nBlocksPerDay * 79 * nMonth)) {
+                nSubsidy = 0.31;
+            }
+            if (nHeight > (nBlocksPerDay * 79 * nMonth) && nHeight <= (nBlocksPerDay * 80 * nMonth)) {
+                nSubsidy = 0.30;
+            }
+            if (nHeight > (nBlocksPerDay * 80 * nMonth) && nHeight <= (nBlocksPerDay * 81 * nMonth)) {
+                nSubsidy = 0.29;
+            }
+            if (nHeight > (nBlocksPerDay * 81 * nMonth) && nHeight <= (nBlocksPerDay * 82 * nMonth)) {
+                nSubsidy = 0.28;
+            }
+            if (nHeight > (nBlocksPerDay * 82 * nMonth) && nHeight <= (nBlocksPerDay * 83 * nMonth)) {
+                nSubsidy = 0.27;
+            }
+            if (nHeight > (nBlocksPerDay * 83 * nMonth) && nHeight <= (nBlocksPerDay * 84 * nMonth)) {
+                nSubsidy = 0.26;
+            }
+            if (nHeight > (nBlocksPerDay * 84 * nMonth) && nHeight <= (nBlocksPerDay * 85 * nMonth)) {
+                nSubsidy = 0.25;
+            }
+            if (nHeight > (nBlocksPerDay * 85 * nMonth) && nHeight <= (nBlocksPerDay * 86 * nMonth)) {
+                nSubsidy = 0.24;
+            }
+            if (nHeight > (nBlocksPerDay * 86 * nMonth) && nHeight <= (nBlocksPerDay * 87 * nMonth)) {
+                nSubsidy = 0.23;
+            }
+            if (nHeight > (nBlocksPerDay * 87 * nMonth) && nHeight <= (nBlocksPerDay * 88 * nMonth)) {
+                nSubsidy = 0.22;
+            }
+            if (nHeight > (nBlocksPerDay * 88 * nMonth) && nHeight <= (nBlocksPerDay * 89 * nMonth)) {
+                nSubsidy = 0.21;
+            }
+            if (nHeight > (nBlocksPerDay * 89 * nMonth) && nHeight <= (nBlocksPerDay * 90 * nMonth)) {
+                nSubsidy = 0.20;
+            }
+            if (nHeight > (nBlocksPerDay * 90 * nMonth) && nHeight <= (nBlocksPerDay * 91 * nMonth)) {
+                nSubsidy = 0.19;
+            }
+            if (nHeight > (nBlocksPerDay * 91 * nMonth) && nHeight <= (nBlocksPerDay * 92 * nMonth)) {
+                nSubsidy = 0.18;
+            }
+            if (nHeight > (nBlocksPerDay * 92 * nMonth) && nHeight <= (nBlocksPerDay * 93 * nMonth)) {
+                nSubsidy = 0.17;
+            }
+
+            // PoS reward is constant from month 93 till month 241
+
+            if (nHeight > (nBlocksPerDay * 93 * nMonth) && nHeight <= (nBlocksPerDay * 241 * nMonth)) {
+                nSubsidy = 0.16;
+            }
+        }
+
+        // Emissions stop after month 241
+
+        if (nHeight > (nBlocksPerDay * 241 * nMonth)) {
+            nSubsidy = 0;
+        }
+    }
+    return nSubsidy * COIN;
 }
 
 CoinsViews::CoinsViews(
@@ -2459,14 +3004,14 @@ bool CheckReward(const CBlock& block, BlockValidationState& state, int nHeight, 
     if (block.IsProofOfWork())
     {
         // Check proof-of-work reward
-        CAmount blockReward = nFees + GetBlockSubsidy(nHeight, consensusParams);
+        CAmount blockReward = nFees + GetBlockSubsidy(nHeight, consensusParams, false);
         if (block.vtx[offset]->GetValueOut() > blockReward)
             return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cb-amount", strprintf("CheckReward(): coinbase pays too much (actual=%d vs limit=%d)", block.vtx[offset]->GetValueOut(), blockReward));
     }
     else
     {
         // Check full reward
-        CAmount blockReward = nFees + GetBlockSubsidy(nHeight, consensusParams);
+        CAmount blockReward = nFees + GetBlockSubsidy(nHeight, consensusParams, true);
         if (nActualStakeReward > blockReward)
             return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-amount", strprintf("CheckReward(): coinstake pays too much (actual=%d vs limit=%d)", nActualStakeReward, blockReward));
 

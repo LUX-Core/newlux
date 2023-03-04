@@ -169,7 +169,7 @@ double GetEstimatedAnnualROI()
     CBlockIndex* pindex = pindexBestHeader == 0 ? ::ChainActive().Tip() : pindexBestHeader;
     int nHeight = pindex ? pindex->nHeight : 0;
     const Consensus::Params& consensusParams = Params().GetConsensus();
-    double subsidy = GetBlockSubsidy(nHeight, consensusParams);
+    double subsidy = GetBlockSubsidy(nHeight, consensusParams, true);
     int nBlocktimeDownscaleFactor = consensusParams.BlocktimeDownscaleFactor(nHeight);
     if(networkWeight > 0)
     {
@@ -2768,7 +2768,7 @@ static UniValue getblockstats(const JSONRPCRequest& request)
     ret_all.pushKV("minfeerate", (minfeerate == MAX_MONEY) ? 0 : minfeerate);
     ret_all.pushKV("mintxsize", mintxsize == dgpMaxBlockSerSize ? 0 : mintxsize);
     ret_all.pushKV("outs", outputs);
-    ret_all.pushKV("subsidy", GetBlockSubsidy(pindex->nHeight, Params().GetConsensus()));
+    ret_all.pushKV("subsidy", GetBlockSubsidy(pindex->nHeight, Params().GetConsensus(), block.IsProofOfStake()));
     ret_all.pushKV("swtotal_size", swtotal_size);
     ret_all.pushKV("swtotal_weight", swtotal_weight);
     ret_all.pushKV("swtxs", swtxs);

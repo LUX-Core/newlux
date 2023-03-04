@@ -258,7 +258,7 @@ static UniValue getsubsidy(const JSONRPCRequest& request)
     if (nTarget < 0)
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Block height out of range");
     const Consensus::Params& consensusParams = Params().GetConsensus();
-    return (uint64_t)GetBlockSubsidy(nTarget, consensusParams);
+    return (uint64_t)GetBlockSubsidy(nTarget, consensusParams, false);
 }
 
 static UniValue getmininginfo(const JSONRPCRequest& request)
@@ -315,7 +315,7 @@ static UniValue getmininginfo(const JSONRPCRequest& request)
     obj.pushKV("difficulty",       diff);
 
     const Consensus::Params& consensusParams = Params().GetConsensus();
-    obj.pushKV("blockvalue",    (uint64_t)GetBlockSubsidy(::ChainActive().Height(), consensusParams));
+    obj.pushKV("blockvalue",    (uint64_t)GetBlockSubsidy(::ChainActive().Height(), consensusParams, false));
 
     obj.pushKV("netmhashps",       GetPoWMHashPS());
     obj.pushKV("netstakeweight",   GetPoSKernelPS());
