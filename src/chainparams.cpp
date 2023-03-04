@@ -71,7 +71,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     genesis.hashStateRoot = uint256(h256Touint(dev::h256("e965ffd002cd6ad0e2dc402b8044de833e06b23127ea8c3d80aec91410771495"))); // lux
     genesis.hashUTXORoot = uint256(h256Touint(dev::sha3(dev::rlp("")))); // lux
 
-
+/*
     while (!CheckProof(genesis.GetHash(), genesis.nBits)) {
         genesis.nNonce64 ++;
     }
@@ -79,7 +79,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     std::cout << genesis.nNonce64 << std::endl;
     std::cout << genesis.GetHash().GetHex() << std::endl;
     std::cout << genesis.hashMerkleRoot.GetHex() << std::endl;
-
+*/
     return genesis;
 }
 
